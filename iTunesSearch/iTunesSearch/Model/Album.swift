@@ -18,14 +18,16 @@ struct Album: Codable, Identifiable {
     let id: Int
     let wrapperType, collectionType: String
     let artistID: Int
-    let amgArtistID: Int
+    let amgArtistID: Int?
     let artistName, collectionName, collectionCensoredName: String
-    let artistViewURL, collectionViewURL: String
+    let artistViewURL: String?
+    let collectionViewURL: String
     let artworkUrl60, artworkUrl100: String
-    let collectionPrice: Double
+    let collectionPrice: Double?
     let collectionExplicitness: String
     let trackCount: Int
-    let copyright, country, currency: String
+    let copyright: String?
+    let country, currency: String
     let releaseDate: String
     let primaryGenreName: String
 

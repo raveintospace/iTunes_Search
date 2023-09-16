@@ -15,6 +15,7 @@ struct AlbumListView: View {
             List(viewModel.albums) { album in
                 Text(album.collectionName)
             }
+            .listStyle(.plain)
             .searchable(text: $viewModel.searchTerm)
             .navigationTitle("Search Albums")
         }
