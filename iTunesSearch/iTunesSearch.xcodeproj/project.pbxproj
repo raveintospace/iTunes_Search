@@ -16,6 +16,7 @@
 		34DB29782AB5C1F8004F2492 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB29772AB5C1F8004F2492 /* Song.swift */; };
 		34DB297A2AB5C204004F2492 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB29792AB5C204004F2492 /* Movie.swift */; };
 		34DB297C2AB5C4B7004F2492 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */; };
+		34E9CA862AB71AA700E132A1 /* AlbumSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		34DB29772AB5C1F8004F2492 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		34DB29792AB5C204004F2492 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
+		34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */,
+				34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				34DB29762AB5BF83004F2492 /* AlbumListViewModel.swift in Sources */,
 				34DB29652AB5BDF8004F2492 /* ContentView.swift in Sources */,
+				34E9CA862AB71AA700E132A1 /* AlbumSearchView.swift in Sources */,
 				34DB297A2AB5C204004F2492 /* Movie.swift in Sources */,
 				34DB29632AB5BDF8004F2492 /* iTunesSearchApp.swift in Sources */,
 				34DB29742AB5BF57004F2492 /* Album.swift in Sources */,
