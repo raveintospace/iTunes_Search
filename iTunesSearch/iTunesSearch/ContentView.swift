@@ -1,7 +1,7 @@
 //
 //  ContentView.swift
 //  iTunesSearch
-//
+//  https://www.youtube.com/watch?v=LT0cawkgXqM&t=0s
 //  Created by Uri on 16/9/23.
 //
 
@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            AlbumListView()
-        }
+        AlbumSearchView()
     }
 }
 
