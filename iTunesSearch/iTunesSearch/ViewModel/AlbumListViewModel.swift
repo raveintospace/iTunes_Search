@@ -20,7 +20,8 @@ class AlbumListViewModel: ObservableObject {
     @Published var searchTerm: String = ""
     @Published var albums: [Album] = [Album]()
     
-    let limit = 20
+    let resultsLimit = 20
+    var pageOffset = 0
     
     var cancellableBag = Set<AnyCancellable>()
     
@@ -34,7 +35,7 @@ class AlbumListViewModel: ObservableObject {
     }
     
     func fetchAlbums(searchTerm: String) {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=album&limit=\(limit)") else {
+        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=album&limit=\(resultsLimit)") else {
             return
         }
         
