@@ -27,7 +27,7 @@ struct AlbumSearchView: View {
 
 struct AlbumPlaceholderView: View {
     @Binding var searchTerm: String
-    let suggestions = ["D-Sturb", "Headhunterz", "Rooler", "Vertile"]
+    let suggestions = ["D-Sturb", "Headhunterz", "Phuture Noize", "Rooler", "Vertile"]
     
     var body: some View {
         VStack(spacing: 20) {

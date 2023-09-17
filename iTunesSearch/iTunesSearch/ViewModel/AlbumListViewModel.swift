@@ -25,6 +25,12 @@ class AlbumListViewModel: ObservableObject {
         case error(String)
     }
     
+    enum EntityType: String {
+        case album
+        case movie
+        case song
+    }
+    
     @Published var searchTerm: String = ""
     @Published var albums: [Album] = [Album]()
     @Published var state: State = .good
@@ -51,12 +57,11 @@ class AlbumListViewModel: ObservableObject {
         guard !searchTerm.isEmpty else { return }
         guard state == .good else { return }
         
-        let offset = currentPage * resultsLimit
-        state = .isLoading
-        
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(searchTerm)&entity=album&limit=\(resultsLimit)&offset=\(offset)") else {
+        guard let url = createURL(searchTerm: searchTerm) else {
             return
         }
+        
+        state = .isLoading
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             
@@ -95,5 +100,22 @@ class AlbumListViewModel: ObservableObject {
     
     func fetchMore() {
         fetchAlbums(searchTerm: searchTerm)
+    }
+    
+    // solves multi words searchTerms
+    func createURL(searchTerm: String, entityType: EntityType = .album) -> URL? {
+        // https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=5
+
+        let offset = currentPage * resultsLimit
+        
+        let baseURL = "https://itunes.apple.com/search"
+        let queryItems = [URLQueryItem(name: "term", value: searchTerm),
+                          URLQueryItem(name: "entity", value: entityType.rawValue),
+                          URLQueryItem(name: "limit", value: String(resultsLimit)),
+                          URLQueryItem(name: "offset", value: String(offset))]
+        
+        var components = URLComponents(string: baseURL)
+        components?.queryItems = queryItems
+        return components?.url
     }
 }
