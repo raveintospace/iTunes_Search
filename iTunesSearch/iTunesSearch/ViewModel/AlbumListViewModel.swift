@@ -17,19 +17,11 @@ import Combine
 
 class AlbumListViewModel: ObservableObject {
     
-    // enum to check status when calling api
-    enum State: Comparable {
-        case good
-        case isLoading
-        case loadedAll
-        case error(String)
-    }
-    
     @Published var searchTerm: String = ""
     @Published var albums: [Album] = [Album]()
-    @Published var state: State = .good
+    @Published var state: FetchState = .good
     
-    let apiService = APIService()
+    private let apiService = APIService()
     
     let resultsLimit = 20
     var currentPage = 0
@@ -78,7 +70,7 @@ class AlbumListViewModel: ObservableObject {
         }
     }
     
-    func fetchMore() {
+    func fetchMoreAlbums() {
         fetchAlbums(searchTerm: searchTerm)
     }
 }

@@ -20,7 +20,7 @@ struct AlbumListView: View {
             case .good:
                 Color.clear
                     .onAppear {
-                        viewModel.fetchMore()
+                        viewModel.fetchMoreAlbums()
                     }
             case .isLoading:
                 ProgressView()

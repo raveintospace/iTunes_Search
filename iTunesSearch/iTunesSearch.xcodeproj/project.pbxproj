@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3423E8F92AB747F200DD9860 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423E8F82AB747F200DD9860 /* APIError.swift */; };
 		3423E8FB2AB7514F00DD9860 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423E8FA2AB7514F00DD9860 /* APIService.swift */; };
+		34D9FBDE2AB9FF710055427B /* SongListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9FBDD2AB9FF710055427B /* SongListViewModel.swift */; };
+		34D9FBE12ABA00030055427B /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9FBE02ABA00030055427B /* FetchState.swift */; };
+		34D9FBE32ABA012F0055427B /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9FBE22ABA012F0055427B /* MovieListViewModel.swift */; };
 		34DB29632AB5BDF8004F2492 /* iTunesSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB29622AB5BDF8004F2492 /* iTunesSearchApp.swift */; };
 		34DB29652AB5BDF8004F2492 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB29642AB5BDF8004F2492 /* ContentView.swift */; };
 		34DB29672AB5BDFA004F2492 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DB29662AB5BDFA004F2492 /* Assets.xcassets */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		3423E8F82AB747F200DD9860 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3423E8FA2AB7514F00DD9860 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		34D9FBDD2AB9FF710055427B /* SongListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongListViewModel.swift; sourceTree = "<group>"; };
+		34D9FBE02ABA00030055427B /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
+		34D9FBE22ABA012F0055427B /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		34DB295F2AB5BDF8004F2492 /* iTunesSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DB29622AB5BDF8004F2492 /* iTunesSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesSearchApp.swift; sourceTree = "<group>"; };
 		34DB29642AB5BDF8004F2492 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,8 +59,16 @@
 			children = (
 				3423E8F82AB747F200DD9860 /* APIError.swift */,
 				3423E8FA2AB7514F00DD9860 /* APIService.swift */,
+				34D9FBE02ABA00030055427B /* FetchState.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		34D9FBDF2AB9FFEA0055427B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		34DB29562AB5BDF7004F2492 = {
@@ -82,6 +96,7 @@
 				34DB29702AB5BF39004F2492 /* View */,
 				34DB29712AB5BF40004F2492 /* ViewModel */,
 				3423E8F72AB747E200DD9860 /* NetworkManager */,
+				34D9FBDF2AB9FFEA0055427B /* Utils */,
 				34DB29662AB5BDFA004F2492 /* Assets.xcassets */,
 				34DB29682AB5BDFA004F2492 /* Preview Content */,
 			);
@@ -109,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				34DB29752AB5BF83004F2492 /* AlbumListViewModel.swift */,
+				34D9FBE22ABA012F0055427B /* MovieListViewModel.swift */,
+				34D9FBDD2AB9FF710055427B /* SongListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -195,7 +212,10 @@
 			files = (
 				34DB29762AB5BF83004F2492 /* AlbumListViewModel.swift in Sources */,
 				34DB29652AB5BDF8004F2492 /* ContentView.swift in Sources */,
+				34D9FBE12ABA00030055427B /* FetchState.swift in Sources */,
+				34D9FBDE2AB9FF710055427B /* SongListViewModel.swift in Sources */,
 				34E9CA862AB71AA700E132A1 /* AlbumSearchView.swift in Sources */,
+				34D9FBE32ABA012F0055427B /* MovieListViewModel.swift in Sources */,
 				34DB297A2AB5C204004F2492 /* Movie.swift in Sources */,
 				34DB29632AB5BDF8004F2492 /* iTunesSearchApp.swift in Sources */,
 				34DB29742AB5BF57004F2492 /* Album.swift in Sources */,
