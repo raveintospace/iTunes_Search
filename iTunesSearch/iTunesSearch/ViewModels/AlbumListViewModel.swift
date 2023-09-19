@@ -1,19 +1,12 @@
 //
 //  AlbumListViewModel.swift
 //  iTunesSearch
-//
+//  https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=5
 //  Created by Uri on 16/9/23.
 //
 
 import Foundation
 import Combine
-
-// MARK: - URL examples
-/*
- https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=5
- https://itunes.apple.com/search?term=jack+johnson&entity=song&limit=5
- https://itunes.apple.com/search?term=jack+johnson&entity=movie&limit=5
- */
 
 class AlbumListViewModel: ObservableObject {
     

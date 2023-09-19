@@ -45,22 +45,24 @@ class APIService {
     }
     
     // MARK: - Solves multi words searchTerms
-    func createURL(searchTerm: String, entityType: EntityType, currentPage: Int, resultsLimit: Int) -> URL? {
-            // https://itunes.apple.com/search?term=jack+johnson&entity=album&limit=5
-
+    func createURL(searchTerm: String, entityType: EntityType, currentPage: Int?, resultsLimit: Int?) -> URL? {
+        
+        let baseURL = "https://itunes.apple.com/search"
+        var queryItems = [URLQueryItem(name: "term", value: searchTerm),
+                          URLQueryItem(name: "entity", value: entityType.rawValue)]
+        
+        
+        if let currentPage = currentPage, let resultsLimit = resultsLimit {
             let offset = currentPage * resultsLimit
-            
-            let baseURL = "https://itunes.apple.com/search"
-            let queryItems = [URLQueryItem(name: "term", value: searchTerm),
-                              URLQueryItem(name: "entity", value: entityType.rawValue),
-                              URLQueryItem(name: "limit", value: String(resultsLimit)),
-                              URLQueryItem(name: "offset", value: String(offset))]
-            
-            var components = URLComponents(string: baseURL)
-            components?.queryItems = queryItems
-            return components?.url
+            URLQueryItem(name: "limit", value: String(resultsLimit))
+            URLQueryItem(name: "offset", value: String(offset))
         }
-
+        
+        var components = URLComponents(string: baseURL)
+        components?.queryItems = queryItems
+        return components?.url
+    }
+    
     // MARK: - Fetch albums
     func fetchAlbums(searchTerm: String,
                      currentPage: Int,
@@ -74,23 +76,21 @@ class APIService {
     
     // MARK: - Fetch movies
     func fetchMovies(searchTerm: String,
-                    currentPage: Int,
-                    resultsLimit: Int,
-                    completion: @escaping (Result<MovieResult, APIError>) -> Void) {
-       
-        let url = createURL(searchTerm: searchTerm, entityType: .movie, currentPage: currentPage, resultsLimit: resultsLimit)
-       
-       fetch(type: MovieResult.self, url: url, completion: completion)
-   }
+                     completion: @escaping (Result<MovieResult, APIError>) -> Void) {
+        
+        let url = createURL(searchTerm: searchTerm, entityType: .movie, currentPage: nil, resultsLimit: nil)
+        
+        fetch(type: MovieResult.self, url: url, completion: completion)
+    }
     
     // MARK: - Fetch songs
     func fetchSongs(searchTerm: String,
                     currentPage: Int,
                     resultsLimit: Int,
                     completion: @escaping (Result<SongResult, APIError>) -> Void) {
-       
+        
         let url = createURL(searchTerm: searchTerm, entityType: .song, currentPage: currentPage, resultsLimit: resultsLimit)
-       
-       fetch(type: SongResult.self, url: url, completion: completion)
-   }
+        
+        fetch(type: SongResult.self, url: url, completion: completion)
+    }
 }
