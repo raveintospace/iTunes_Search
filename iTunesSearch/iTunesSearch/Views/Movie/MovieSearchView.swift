@@ -1,37 +1,37 @@
 //
-//  AlbumSearchView.swift
+//  MovieSearchView.swift
 //  iTunesSearch
 //
-//  Created by Uri on 17/9/23.
+//  Created by Uri on 19/9/23.
 //
 
 import SwiftUI
 
-struct AlbumSearchView: View {
-    @StateObject var viewModel = AlbumListViewModel()
+struct MovieSearchView: View {
+    @StateObject private var viewModel = MovieListViewModel()
     
     var body: some View {
         NavigationView {
             Group {
                 if viewModel.searchTerm.isEmpty {
-                    AlbumPlaceholderView(searchTerm: $viewModel.searchTerm)
+                    MoviePlaceholderView(searchTerm: $viewModel.searchTerm)
                 } else {
-                    AlbumListView(viewModel: viewModel)
+                    MovieListView(viewModel: viewModel)
                 }
             }
             .searchable(text: $viewModel.searchTerm)
-            .navigationTitle("Search Albums")
+            .navigationTitle("Search Movies")
         }
     }
 }
 
-struct AlbumPlaceholderView: View {
+struct MoviePlaceholderView: View {
     @Binding var searchTerm: String
-    let suggestions = ["D-Sturb", "Headhunterz", "Phuture Noize", "Rooler", "Vertile"]
+    let suggestions = ["Clint Eastwood", "Julia Roberts", "Martin Scorsese", "Ryan Gosling", "Woody Allen"]
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Trending artits")
+            Text("Trending movie artists")
                 .font(.largeTitle)
             ForEach(suggestions, id: \.self) { suggestion in
                 Button {
@@ -45,8 +45,8 @@ struct AlbumPlaceholderView: View {
     }
 }
 
-struct AlbumSearchView_Previews: PreviewProvider {
+struct MovieSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumSearchView()
+        MovieSearchView()
     }
 }
