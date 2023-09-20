@@ -19,7 +19,7 @@ struct AlbumSearchView: View {
                     AlbumListView(viewModel: viewModel)
                 }
             }
-            .searchable(text: $viewModel.searchTerm)
+            .searchable(text: $viewModel.searchTerm).autocorrectionDisabled()
             .navigationTitle("Search Albums")
         }
     }
