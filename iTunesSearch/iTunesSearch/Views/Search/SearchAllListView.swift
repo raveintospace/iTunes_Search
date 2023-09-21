@@ -17,6 +17,24 @@ struct SearchAllListView: View {
         ScrollView {
             LazyVStack {
                 HStack {
+                    Text("Songs")
+                    Spacer()
+                    NavigationLink {
+                        SongListView(viewModel: songListViewModel)
+                    } label: {
+                        HStack {
+                            Text("See all")
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                .padding()
+                
+                SongSectionView(songs: songListViewModel.songs)
+                
+                Divider()
+                
+                HStack {
                     Text("Movies")
                     Spacer()
                     NavigationLink {
@@ -30,6 +48,8 @@ struct SearchAllListView: View {
                 }
                 .padding()
                 
+                MovieSectionView(movies: movieListViewModel.movies)
+                                
                 Text("Albums: \(albumListViewModel.albums.count)")
                 Text("Movies: \(movieListViewModel.movies.count)")
                 Text("Songs: \(songListViewModel.songs.count)")
