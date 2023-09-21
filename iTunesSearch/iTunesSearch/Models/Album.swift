@@ -33,7 +33,7 @@ struct Album: Codable, Identifiable {
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, collectionType
-        case id = "collectionId"
+        case id = "collectionId"            // custom, transforming collectionId from json to our id
         case artistID = "artistId"
         case amgArtistID = "amgArtistId"
         case artistName, collectionName, collectionCensoredName

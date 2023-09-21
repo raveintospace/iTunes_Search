@@ -23,14 +23,20 @@ class SongListViewModel: ObservableObject {
     
     init() {
         $searchTerm
+            .removeDuplicates()
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)  // run search every 0.5 seconds
             .sink { [weak self] term in
-                self?.state = .good
-                self?.currentPage = 0
-                self?.songs = []       // clean array with previous results
-                self?.fetchSongs(searchTerm: term)
+                guard let self = self else { return }
+                self.clearForSink()
+                self.fetchSongs(searchTerm: term)
             }.store(in: &cancellableBag)
+    }
+    
+    func clearForSink() {
+        state = .good
+        currentPage = 0
+        songs = []       // clean array with previous results
     }
     
     func fetchSongs(searchTerm: String) {
@@ -51,13 +57,14 @@ class SongListViewModel: ObservableObject {
                         self.songs.append(song)
                     }
                     self.currentPage += 1
-                    debugPrint(self.songs.count)
+                    debugPrint("Fetched songs: \(self.songs.count)")
                     
                     // if we get less albums in Api call than resultsLimit
                     self.state = (results.results.count == self.resultsLimit) ? .good : .loadedAll
                     
                 case .failure(let error):
-                    self.state = .error("Could not load: \(error.localizedDescription)")
+                    debugPrint("Could not load: \(error)")
+                    self.state = .error(error.localizedDescription)
                 }
             }
         }

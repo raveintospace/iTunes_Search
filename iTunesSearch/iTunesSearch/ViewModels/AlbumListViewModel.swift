@@ -23,14 +23,20 @@ class AlbumListViewModel: ObservableObject {
     
     init() {
         $searchTerm
+            .removeDuplicates()     // avoid searching the same string if it's passed twice
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)  // run search every 0.5 seconds
             .sink { [weak self] term in
-                self?.state = .good
-                self?.currentPage = 0
-                self?.albums = []       // clean array with previous results
-                self?.fetchAlbums(searchTerm: term)
+                guard let self = self else { return }
+                self.clearForSink()
+                self.fetchAlbums(searchTerm: term)
             }.store(in: &cancellableBag)
+    }
+    
+    func clearForSink() {
+        state = .good
+        currentPage = 0
+        albums = []       // clean array with previous results
     }
     
     func fetchAlbums(searchTerm: String) {
@@ -51,13 +57,14 @@ class AlbumListViewModel: ObservableObject {
                         self.albums.append(album)
                     }
                     self.currentPage += 1
-                    debugPrint(self.albums.count)
+                    debugPrint("Fetched albums: \(self.albums.count)")
                     
                     // if we get less albums in Api call than resultsLimit
                     self.state = (results.results.count == self.resultsLimit) ? .good : .loadedAll
                     
                 case .failure(let error):
-                    self.state = .error("Could not load: \(error.localizedDescription)")
+                    debugPrint("Could not load: \(error)")
+                    self.state = .error(error.localizedDescription)
                 }
             }
         }

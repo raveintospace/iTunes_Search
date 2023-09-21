@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum EntityType: String {
-    case album
-    case movie
-    case song
-}
-
 class APIService {
     
     func fetch<T: Decodable>(type: T.Type, url: URL?, completion: @escaping (Result<T, APIError>) -> Void) {
