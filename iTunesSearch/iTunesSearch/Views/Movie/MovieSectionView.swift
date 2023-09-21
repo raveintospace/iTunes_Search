@@ -12,12 +12,22 @@ struct MovieSectionView: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHStack {
+            LazyHStack(alignment: .top, spacing: 0) {
                 ForEach(movies) { movie in
-                    Text(movie.trackName)
+                    VStack(alignment: .leading) {
+                        ObjectImageView(urlString: movie.artworkUrl100, size: 100)
+                        Text(movie.trackName)
+                        Text(movie.primaryGenreName)
+                            .foregroundColor(.gray)
+                    }
+                    .lineLimit(2)
+                    .frame(width: 80)
+                    .font(.caption)
                 }
             }
+            .padding([.horizontal, .bottom])
         }
+
     }
 }
 

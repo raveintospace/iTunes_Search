@@ -15,7 +15,7 @@ struct AlbumSectionView: View {
             LazyHStack {
                 ForEach(albums) { album in
                     VStack(alignment: .leading) {
-                        RowImageView(urlString: album.artworkUrl100, size: 100)
+                        ObjectImageView(urlString: album.artworkUrl100, size: 100)
                         Text(album.collectionName)
                         Text(album.artistName)
                             .foregroundColor(.gray)

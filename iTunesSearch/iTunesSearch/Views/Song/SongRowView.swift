@@ -12,7 +12,7 @@ struct SongRowView: View {
     
     var body: some View {
         HStack {
-            RowImageView(urlString: song.artworkUrl60, size: 60.0)
+            ObjectImageView(urlString: song.artworkUrl60, size: 60.0)
             
             VStack(alignment: .leading) {
                 Text(song.trackName)
