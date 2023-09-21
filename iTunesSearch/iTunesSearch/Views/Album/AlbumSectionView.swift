@@ -12,7 +12,7 @@ struct AlbumSectionView: View {
     
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHStack {
+            LazyHStack(alignment: .top) {
                 ForEach(albums) { album in
                     VStack(alignment: .leading) {
                         ObjectImageView(urlString: album.artworkUrl100, size: 100)

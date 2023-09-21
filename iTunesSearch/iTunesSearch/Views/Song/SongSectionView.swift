@@ -9,14 +9,20 @@ import SwiftUI
 
 struct SongSectionView: View {
     let songs: [Song]
+    let rows = Array(repeating: GridItem(.fixed(60),
+                                         spacing: 0,
+                                         alignment: .leading),
+                     count: 4)
     
     var body: some View {
         ScrollView(.horizontal) {
-            LazyHStack {
+            LazyHGrid(rows: rows, spacing: 15) {
                 ForEach(songs) { song in
-                    Text(song.trackName)
+                    SongRowView(song: song)
+                        .frame(width: 300)
                 }
             }
+            .padding([.horizontal, .bottom])
         }
     }
 }
