@@ -35,6 +35,24 @@ struct SearchAllListView: View {
                 Divider()
                 
                 HStack {
+                    Text("Albums")
+                    Spacer()
+                    NavigationLink {
+                        AlbumListView(viewModel: albumListViewModel)
+                    } label: {
+                        HStack {
+                            Text("See all")
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                .padding()
+                
+                AlbumSectionView(albums: albumListViewModel.albums)
+                
+                Divider()
+                
+                HStack {
                     Text("Movies")
                     Spacer()
                     NavigationLink {
@@ -49,10 +67,6 @@ struct SearchAllListView: View {
                 .padding()
                 
                 MovieSectionView(movies: movieListViewModel.movies)
-                                
-                Text("Albums: \(albumListViewModel.albums.count)")
-                Text("Movies: \(movieListViewModel.movies.count)")
-                Text("Songs: \(songListViewModel.songs.count)")
             }
         }
     }
