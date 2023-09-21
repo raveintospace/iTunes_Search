@@ -9,11 +9,11 @@ import SwiftUI
 
 struct SearchPlaceholderView: View {
     @Binding var searchTerm: String
-    let suggestions = ["D-Sturb", "Headhunterz", "Phuture Noize", "Rooler", "Vertile"]
+    let suggestions = ["Clint Eastwood", "Martin Scorsese", "Phuture Noize", "Rooler", "Vertile"]
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Trending music artists")
+            Text("Trending artists")
                 .font(.largeTitle)
             ForEach(suggestions, id: \.self) { suggestion in
                 Button {

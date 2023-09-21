@@ -23,6 +23,7 @@ class AlbumListViewModel: ObservableObject {
     
     init() {
         $searchTerm
+            .removeDuplicates()     // avoid searching the same string if it's passed twice
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)  // run search every 0.5 seconds
             .sink { [weak self] term in

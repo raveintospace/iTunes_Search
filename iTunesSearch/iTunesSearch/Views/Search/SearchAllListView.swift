@@ -15,7 +15,9 @@ struct SearchAllListView: View {
     
     var body: some View {
         VStack {
-            
+            Text("Albums: \(albumListViewModel.albums.count)")
+            Text("Movies: \(movieListViewModel.movies.count)")
+            Text("Songs: \(songListViewModel.songs.count)")
         }
     }
 }

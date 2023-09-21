@@ -38,12 +38,26 @@ struct SearchView: View {
                     case .all:
                         SearchAllListView(albumListViewModel: albumListViewModel,
                                           movieListViewModel: movieListViewModel, songListViewModel: songListViewModel)
+                        .onAppear {
+                            albumListViewModel.searchTerm = searchTerm
+                            movieListViewModel.searchTerm = searchTerm
+                            songListViewModel.searchTerm = searchTerm
+                        }
                     case .album:
                         AlbumListView(viewModel: albumListViewModel)
+                            .onAppear {
+                                albumListViewModel.searchTerm = searchTerm
+                            }
                     case .movie:
                         MovieListView(viewModel: movieListViewModel)
+                            .onAppear {
+                                movieListViewModel.searchTerm = searchTerm
+                            }
                     case .song:
                         SongListView(viewModel: songListViewModel)
+                            .onAppear {
+                                songListViewModel.searchTerm = searchTerm
+                            }
                     }
                 }
             }
@@ -52,9 +66,19 @@ struct SearchView: View {
             .navigationBarTitleDisplayMode(.inline)
         }
         .onChange(of: searchTerm) { newValue in
-            albumListViewModel.searchTerm = newValue
-            movieListViewModel.searchTerm = newValue
-            songListViewModel.searchTerm = newValue
+            
+            switch selectedEntityType {
+            case .all:
+                albumListViewModel.searchTerm = newValue
+                movieListViewModel.searchTerm = newValue
+                songListViewModel.searchTerm = newValue
+            case .album:
+                albumListViewModel.searchTerm = newValue
+            case .movie:
+                movieListViewModel.searchTerm = newValue
+            case .song:
+                songListViewModel.searchTerm = newValue
+            }
         }
     }
 }
