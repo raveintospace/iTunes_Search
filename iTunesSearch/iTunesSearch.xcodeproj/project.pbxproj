@@ -101,8 +101,8 @@
 		344D74CD2ABB61CA007F7253 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				344112CB2ABC400E00672F7B /* SearchAllListView.swift */,
 				344D74CE2ABB61D9007F7253 /* SearchView.swift */,
+				344112CB2ABC400E00672F7B /* SearchAllListView.swift */,
 				344112CF2ABC454100672F7B /* SearchPlaceholderView.swift */,
 			);
 			path = Search;

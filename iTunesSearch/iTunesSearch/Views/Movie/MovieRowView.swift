@@ -16,13 +16,14 @@ struct MovieRowView: View {
             
             VStack(alignment: .leading) {
                 Text(movie.trackName)
-                Text(movie.artistName)
+                Text(movie.primaryGenreName)
                     .foregroundColor(.gray)
                 Text(movie.releaseDate)
-                    .foregroundColor(.gray)
             }
             .font(.caption)
             
+            Spacer(minLength: 20)
+            BuyButton(urlString: movie.previewURL ?? "", price: movie.trackPrice, currency: movie.currency)
         }
     }
 }
