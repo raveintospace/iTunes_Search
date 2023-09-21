@@ -12,7 +12,7 @@ struct SongRowView: View {
     
     var body: some View {
         HStack {
-            SongImageView(urlString: song.artworkUrl60)
+            RowImageView(urlString: song.artworkUrl60, size: 60.0)
             
             VStack(alignment: .leading) {
                 Text(song.trackName)
@@ -24,12 +24,7 @@ struct SongRowView: View {
             
             Spacer(minLength: 20)
             
-            if let url = URL(string: song.trackViewURL), let price = song.trackPrice {
-                Link(destination: url) {
-                    Text("\(Int(price)) \(song.currency)")
-                }
-                .buttonStyle(BuyButtonStyle())
-            }
+            BuyButton(urlString: song.previewURL, price: song.trackPrice, currency: song.currency)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SongImageView.swift
+//  RowImageView.swift
 //  iTunesSearch
 //
 //  Created by Uri on 21/9/23.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct SongImageView: View {
+struct RowImageView: View {
     let urlString: String
+    let size: CGFloat
     
     var body: some View {
         AsyncImage(url: URL(string: urlString)) { image in
@@ -18,12 +19,12 @@ struct SongImageView: View {
         } placeholder: {
             ProgressView()
         }
-        .frame(width: 60, height: 60)
+        .frame(width: size, height: size)
     }
 }
 
-struct SongImageView_Previews: PreviewProvider {
+struct RowImageView_Previews: PreviewProvider {
     static var previews: some View {
-        SongImageView(urlString: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/31/d3/88/31d38806-7a6c-9002-99ce-87a00ed07046/8719244860449.png/60x60bb.jpg")
+        RowImageView(urlString: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/97/47/a0/9747a0ea-c569-dc66-a962-6bd70c5c41a4/8717825532785.png/100x100bb.jpg", size: 100.0)
     }
 }
