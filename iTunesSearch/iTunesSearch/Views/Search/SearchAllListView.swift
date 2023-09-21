@@ -14,16 +14,33 @@ struct SearchAllListView: View {
     @ObservedObject var songListViewModel: SongListViewModel
     
     var body: some View {
-        VStack {
-            Text("Albums: \(albumListViewModel.albums.count)")
-            Text("Movies: \(movieListViewModel.movies.count)")
-            Text("Songs: \(songListViewModel.songs.count)")
+        ScrollView {
+            LazyVStack {
+                HStack {
+                    Text("Movies")
+                    Spacer()
+                    NavigationLink {
+                        MovieListView(viewModel: movieListViewModel)
+                    } label: {
+                        HStack {
+                            Text("See all")
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                .padding()
+                
+                Text("Albums: \(albumListViewModel.albums.count)")
+                Text("Movies: \(movieListViewModel.movies.count)")
+                Text("Songs: \(songListViewModel.songs.count)")
+            }
         }
     }
 }
 
-//struct SearchAllListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchAllListView()
-//    }
-//}
+struct SearchAllListView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchAllListView(albumListViewModel: AlbumListViewModel.example(),
+                          movieListViewModel: MovieListViewModel.example(), songListViewModel: SongListViewModel.example())
+    }
+}

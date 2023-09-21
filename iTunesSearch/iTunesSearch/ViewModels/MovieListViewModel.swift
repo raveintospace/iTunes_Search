@@ -65,4 +65,11 @@ class MovieListViewModel: ObservableObject {
     func fetchMoreMovies() {
         fetchMovies(searchTerm: searchTerm)
     }
+    
+    // lesson 5 - used for preview
+    static func example() -> MovieListViewModel {
+        let vm = MovieListViewModel()
+        vm.movies = [Movie.movieExample()]
+        return vm
+    }
 }
