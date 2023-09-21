@@ -12,7 +12,9 @@ struct SongImageView: View {
     
     var body: some View {
         AsyncImage(url: URL(string: urlString)) { image in
-            image.resizable()
+            image
+                .resizable()
+                .border(Color(white: 0.8))
         } placeholder: {
             ProgressView()
         }

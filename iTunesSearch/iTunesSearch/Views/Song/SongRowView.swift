@@ -22,10 +22,13 @@ struct SongRowView: View {
             }
             .lineLimit(1)
             
+            Spacer(minLength: 20)
+            
             if let url = URL(string: song.trackViewURL), let price = song.trackPrice {
                 Link(destination: url) {
                     Text("\(Int(price)) \(song.currency)")
                 }
+                .buttonStyle(BuyButtonStyle())
             }
         }
     }
