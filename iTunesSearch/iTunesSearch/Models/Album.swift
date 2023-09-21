@@ -41,4 +41,10 @@ struct Album: Codable, Identifiable {
         case collectionViewURL = "collectionViewUrl"
         case artworkUrl60, artworkUrl100, collectionPrice, collectionExplicitness, trackCount, copyright, country, currency, releaseDate, primaryGenreName
     }
+    
+    static func albumExample() -> Album {
+        Album(id: 1, wrapperType: "collection", collectionType: "Album", artistID: 2, amgArtistID: 3, artistName: "Headhunterz", collectionName: "Project One", collectionCensoredName: "Project One", artistViewURL: "", collectionViewURL: "",
+              artworkUrl60: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/97/47/a0/9747a0ea-c569-dc66-a962-6bd70c5c41a4/8717825532785.png/60x60bb.jpg",
+              artworkUrl100: "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/97/47/a0/9747a0ea-c569-dc66-a962-6bd70c5c41a4/8717825532785.png/100x100bb.jpg", collectionPrice: 9.99, collectionExplicitness: "", trackCount: 13, copyright: "", country: "USA", currency: "USD", releaseDate: "2008-07-15T07:00:00Z", primaryGenreName: "Hardstyle")
+    }
 }
