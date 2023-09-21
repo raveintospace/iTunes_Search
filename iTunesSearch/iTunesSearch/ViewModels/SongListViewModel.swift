@@ -74,9 +74,10 @@ class SongListViewModel: ObservableObject {
         fetchSongs(searchTerm: searchTerm)
     }
     
-    // lesson 5
+    // lesson 5 - used for preview
     static func example() -> SongListViewModel {
         let vm = SongListViewModel()
-        
+        vm.songs = [Song.songExample()]
+        return vm
     }
 }
