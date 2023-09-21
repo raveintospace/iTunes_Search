@@ -22,6 +22,7 @@ struct RowImageView: View {
                 image
                     .resizable()
                     .border(Color(white: 0.8))
+                    .scaledToFit()
             @unknown default:
                 EmptyView()
             }

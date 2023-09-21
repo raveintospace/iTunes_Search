@@ -14,9 +14,18 @@ struct AlbumSectionView: View {
         ScrollView(.horizontal) {
             LazyHStack {
                 ForEach(albums) { album in
-                    Text(album.collectionName)
+                    VStack(alignment: .leading) {
+                        RowImageView(urlString: album.artworkUrl100, size: 100)
+                        Text(album.collectionName)
+                        Text(album.artistName)
+                            .foregroundColor(.gray)
+                    }
+                    .lineLimit(2)
+                    .frame(width: 100)
+                    .font(.caption)
                 }
             }
+            .padding([.horizontal, .bottom])
         }
     }
 }

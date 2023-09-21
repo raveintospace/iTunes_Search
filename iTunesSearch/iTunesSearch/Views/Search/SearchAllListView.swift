@@ -18,6 +18,7 @@ struct SearchAllListView: View {
             LazyVStack {
                 HStack {
                     Text("Songs")
+                        .font(.title2)
                     Spacer()
                     NavigationLink {
                         SongListView(viewModel: songListViewModel)
@@ -28,14 +29,16 @@ struct SearchAllListView: View {
                         }
                     }
                 }
-                .padding()
+                .padding(.horizontal)
                 
                 SongSectionView(songs: songListViewModel.songs)
                 
                 Divider()
+                    .padding(.bottom)
                 
                 HStack {
                     Text("Albums")
+                        .font(.title2)
                     Spacer()
                     NavigationLink {
                         AlbumListView(viewModel: albumListViewModel)
@@ -46,14 +49,16 @@ struct SearchAllListView: View {
                         }
                     }
                 }
-                .padding()
+                .padding(.horizontal)
                 
                 AlbumSectionView(albums: albumListViewModel.albums)
                 
                 Divider()
+                    .padding(.bottom)
                 
                 HStack {
                     Text("Movies")
+                        .font(.title2)
                     Spacer()
                     NavigationLink {
                         MovieListView(viewModel: movieListViewModel)
@@ -64,7 +69,7 @@ struct SearchAllListView: View {
                         }
                     }
                 }
-                .padding()
+                .padding(.horizontal)
                 
                 MovieSectionView(movies: movieListViewModel.movies)
             }
