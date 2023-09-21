@@ -56,7 +56,7 @@ class SongListViewModel: ObservableObject {
                         self.songs.append(song)
                     }
                     self.currentPage += 1
-                    debugPrint(self.songs.count)
+                    debugPrint("Fetched songs: \(self.songs.count)")
                     
                     // if we get less albums in Api call than resultsLimit
                     self.state = (results.results.count == self.resultsLimit) ? .good : .loadedAll

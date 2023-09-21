@@ -49,7 +49,7 @@ class MovieListViewModel: ObservableObject {
                 switch result {
                 case .success(let results):
                     self.movies = results.results
-                    debugPrint("Movies in array: \(self.movies.count)")
+                    debugPrint("Fetched movies: \(self.movies.count)")
                     
                     self.state = .good
                     

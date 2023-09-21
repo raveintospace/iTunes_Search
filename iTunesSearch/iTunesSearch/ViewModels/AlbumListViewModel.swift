@@ -56,7 +56,7 @@ class AlbumListViewModel: ObservableObject {
                         self.albums.append(album)
                     }
                     self.currentPage += 1
-                    debugPrint(self.albums.count)
+                    debugPrint("Fetched albums: \(self.albums.count)")
                     
                     // if we get less albums in Api call than resultsLimit
                     self.state = (results.results.count == self.resultsLimit) ? .good : .loadedAll
