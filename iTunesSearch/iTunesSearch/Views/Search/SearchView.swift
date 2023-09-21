@@ -51,6 +51,11 @@ struct SearchView: View {
             .navigationTitle("Search")
             .navigationBarTitleDisplayMode(.inline)
         }
+        .onChange(of: searchTerm) { newValue in
+            albumListViewModel.searchTerm = newValue
+            movieListViewModel.searchTerm = newValue
+            songListViewModel.searchTerm = newValue
+        }
     }
 }
 

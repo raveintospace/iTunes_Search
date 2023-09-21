@@ -62,7 +62,8 @@ class AlbumListViewModel: ObservableObject {
                     self.state = (results.results.count == self.resultsLimit) ? .good : .loadedAll
                     
                 case .failure(let error):
-                    self.state = .error("Could not load: \(error.localizedDescription)")
+                    debugPrint("Could not load: \(error)")
+                    self.state = .error(error.localizedDescription)
                 }
             }
         }
