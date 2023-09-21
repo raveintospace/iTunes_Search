@@ -22,8 +22,12 @@ struct SearchView: View {
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
+                
+                Spacer()
             }
             .searchable(text: $searchTerm).autocorrectionDisabled()
+            .navigationTitle("Search")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
