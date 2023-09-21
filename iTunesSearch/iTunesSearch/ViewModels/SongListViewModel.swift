@@ -1,7 +1,7 @@
 //
 //  SongListViewModel.swift
 //  iTunesSearch
-//   https://itunes.apple.com/search?term=jack+johnson&entity=song&limit=5
+//  https://itunes.apple.com/search?term=jack+johnson&entity=song&limit=5
 //  Created by Uri on 19/9/23.
 //
 
@@ -72,5 +72,11 @@ class SongListViewModel: ObservableObject {
     
     func fetchMoreSongs() {
         fetchSongs(searchTerm: searchTerm)
+    }
+    
+    // lesson 5
+    static func example() -> SongListViewModel {
+        let vm = SongListViewModel()
+        
     }
 }
