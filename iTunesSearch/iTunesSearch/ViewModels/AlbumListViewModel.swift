@@ -26,11 +26,16 @@ class AlbumListViewModel: ObservableObject {
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)  // run search every 0.5 seconds
             .sink { [weak self] term in
-                self?.state = .good
-                self?.currentPage = 0
-                self?.albums = []       // clean array with previous results
-                self?.fetchAlbums(searchTerm: term)
+                guard let self = self else { return }
+                self.clearForSink()
+                self.fetchAlbums(searchTerm: term)
             }.store(in: &cancellableBag)
+    }
+    
+    func clearForSink() {
+        state = .good
+        currentPage = 0
+        albums = []       // clean array with previous results
     }
     
     func fetchAlbums(searchTerm: String) {

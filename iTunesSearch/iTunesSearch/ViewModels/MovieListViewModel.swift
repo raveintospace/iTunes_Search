@@ -23,10 +23,15 @@ class MovieListViewModel: ObservableObject {
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)  // run search every 0.5 seconds
             .sink { [weak self] term in
-                self?.state = .good
-                self?.movies = []       // clean array with previous results
-                self?.fetchMovies(searchTerm: term)
+                guard let self = self else { return }
+                self.clearForSink()
+                self.fetchMovies(searchTerm: term)
             }.store(in: &cancellableBag)
+    }
+    
+    func clearForSink() {
+        state = .good
+        movies = []       // clean array with previous results
     }
     
     func fetchMovies(searchTerm: String) {

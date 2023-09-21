@@ -31,7 +31,7 @@ struct AlbumPlaceholderView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Trending music artits")
+            Text("Trending music artists")
                 .font(.largeTitle)
             ForEach(suggestions, id: \.self) { suggestion in
                 Button {

@@ -11,6 +11,10 @@ struct SearchView: View {
     @State private var selectedEntityType = EntityType.all
     @State private var searchTerm = ""
     
+    @StateObject private var albumListViewModel = AlbumListViewModel()
+    @StateObject private var movieListViewModel = MovieListViewModel()
+    @StateObject private var songListViewModel = SongListViewModel()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -23,7 +27,25 @@ struct SearchView: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal)
                 
-                Spacer()
+                Divider()
+                
+                if searchTerm.count == 0 {
+                    SearchPlaceholderView(searchTerm: $searchTerm)
+                        .frame(maxHeight: .infinity)
+                    
+                } else {
+                    switch selectedEntityType {
+                    case .all:
+                        SearchAllListView(albumListViewModel: albumListViewModel,
+                                          movieListViewModel: movieListViewModel, songListViewModel: songListViewModel)
+                    case .album:
+                        AlbumListView(viewModel: albumListViewModel)
+                    case .movie:
+                        MovieListView(viewModel: movieListViewModel)
+                    case .song:
+                        SongListView(viewModel: songListViewModel)
+                    }
+                }
             }
             .searchable(text: $searchTerm).autocorrectionDisabled()
             .navigationTitle("Search")

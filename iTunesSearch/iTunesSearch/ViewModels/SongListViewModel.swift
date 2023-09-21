@@ -26,11 +26,16 @@ class SongListViewModel: ObservableObject {
             .dropFirst()
             .debounce(for: .seconds(0.5), scheduler: RunLoop.main)  // run search every 0.5 seconds
             .sink { [weak self] term in
-                self?.state = .good
-                self?.currentPage = 0
-                self?.songs = []       // clean array with previous results
-                self?.fetchSongs(searchTerm: term)
+                guard let self = self else { return }
+                self.clearForSink()
+                self.fetchSongs(searchTerm: term)
             }.store(in: &cancellableBag)
+    }
+    
+    func clearForSink() {
+        state = .good
+        currentPage = 0
+        songs = []       // clean array with previous results
     }
     
     func fetchSongs(searchTerm: String) {
