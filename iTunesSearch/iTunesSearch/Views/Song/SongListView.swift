@@ -13,28 +13,7 @@ struct SongListView: View {
     var body: some View {
         List {
             ForEach(viewModel.songs) { song in
-                HStack {
-                    AsyncImage(url: URL(string: song.artworkUrl60)) { image in
-                        image.resizable()
-                    } placeholder: {
-                        ProgressView()
-                    }
-                    .frame(width: 60, height: 60)
-                    
-                    VStack(alignment: .leading) {
-                        Text(song.trackName)
-                        Text(song.artistName + " - " + song.collectionName)
-                            .font(.caption)
-                            .foregroundColor(.gray)
-                    }
-                    .lineLimit(1)
-                    
-                    if let url = URL(string: song.trackViewURL), let price = song.trackPrice {
-                        Link(destination: url) {
-                            Text("\(Int(price)) \(song.currency)")
-                        }
-                    }
-                }
+                SongRowView(song: song)
             }
             
             switch viewModel.state {
