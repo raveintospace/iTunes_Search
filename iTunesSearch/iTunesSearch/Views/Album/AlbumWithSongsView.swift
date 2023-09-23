@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct AlbumWithSongsView: View {
+    
+    @ObservedObject var albumWithSongsViewModel: AlbumWithSongsViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            ForEach(albumWithSongsViewModel.songsInAlbum) { song in
+                Text("\(song.trackNumber)")
+            }
+        }
     }
 }
 
 struct AlbumWithSongsView_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumWithSongsView()
+        AlbumWithSongsView(albumWithSongsViewModel: AlbumWithSongsViewModel.example())
     }
 }

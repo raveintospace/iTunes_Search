@@ -17,6 +17,7 @@ class AlbumWithSongsViewModel: ObservableObject {
     
     init(albumID: Int) {
         self.albumId = albumID
+        fetchSongsForAlbumDetail(albumId: albumID)
     }
     
     func fetchSongsForAlbumDetail(albumId: Int) {
@@ -26,7 +27,12 @@ class AlbumWithSongsViewModel: ObservableObject {
                 
                 switch result {
                 case .success(let results):
-                    self.songsInAlbum = results.results
+                    
+                    // lesson 6 - remove first item to avoid having two #1 as trackNumber
+                    var fetchedSongs = results.results
+                    _ = fetchedSongs.removeFirst()
+                    
+                    self.songsInAlbum = fetchedSongs
                     self.state = .good
                     
                 case .failure(let error):
@@ -35,5 +41,11 @@ class AlbumWithSongsViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    static func example() -> AlbumWithSongsViewModel {
+        let vm = AlbumWithSongsViewModel(albumID: 1)
+        vm.songsInAlbum = [Song.songExample()]
+        return vm
     }
 }
