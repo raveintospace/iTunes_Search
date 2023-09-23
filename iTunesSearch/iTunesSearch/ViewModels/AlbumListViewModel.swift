@@ -73,4 +73,11 @@ class AlbumListViewModel: ObservableObject {
     func fetchMoreAlbums() {
         fetchAlbums(searchTerm: searchTerm)
     }
+    
+    // lesson 5 - used for preview
+    static func example() -> AlbumListViewModel {
+        let vm = AlbumListViewModel()
+        vm.albums = [Album.albumExample()]
+        return vm
+    }
 }

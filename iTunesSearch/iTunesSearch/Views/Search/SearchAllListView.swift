@@ -14,16 +14,72 @@ struct SearchAllListView: View {
     @ObservedObject var songListViewModel: SongListViewModel
     
     var body: some View {
-        VStack {
-            Text("Albums: \(albumListViewModel.albums.count)")
-            Text("Movies: \(movieListViewModel.movies.count)")
-            Text("Songs: \(songListViewModel.songs.count)")
+        ScrollView {
+            LazyVStack {
+                HStack {
+                    Text("Songs")
+                        .font(.title2)
+                    Spacer()
+                    NavigationLink {
+                        SongListView(viewModel: songListViewModel)
+                    } label: {
+                        HStack {
+                            Text("See all")
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                
+                SongSectionView(songs: songListViewModel.songs)
+                
+                Divider()
+                    .padding(.bottom)
+                
+                HStack {
+                    Text("Albums")
+                        .font(.title2)
+                    Spacer()
+                    NavigationLink {
+                        AlbumListView(viewModel: albumListViewModel)
+                    } label: {
+                        HStack {
+                            Text("See all")
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                
+                AlbumSectionView(albums: albumListViewModel.albums)
+                
+                Divider()
+                    .padding(.bottom)
+                
+                HStack {
+                    Text("Movies")
+                        .font(.title2)
+                    Spacer()
+                    NavigationLink {
+                        MovieListView(viewModel: movieListViewModel)
+                    } label: {
+                        HStack {
+                            Text("See all")
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                }
+                .padding(.horizontal)
+                
+                MovieSectionView(movies: movieListViewModel.movies)
+            }
         }
     }
 }
 
-//struct SearchAllListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchAllListView()
-//    }
-//}
+struct SearchAllListView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchAllListView(albumListViewModel: AlbumListViewModel.example(),
+                          movieListViewModel: MovieListViewModel.example(), songListViewModel: SongListViewModel.example())
+    }
+}
