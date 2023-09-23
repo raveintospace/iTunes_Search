@@ -38,6 +38,7 @@
 		34DB297A2AB5C204004F2492 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB29792AB5C204004F2492 /* Movie.swift */; };
 		34DB297C2AB5C4B7004F2492 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */; };
 		34E9CA862AB71AA700E132A1 /* AlbumSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */; };
+		34ECBF382ABEEFB700C9A2B0 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		34DB29792AB5C204004F2492 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
 		34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchView.swift; sourceTree = "<group>"; };
+		34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */,
 				348B72F62ABC8BFE000DFF45 /* AlbumRowView.swift */,
 				348B73032ABC9865000DFF45 /* AlbumSectionView.swift */,
+				34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */,
 			);
 			path = Album;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				3423E8FB2AB7514F00DD9860 /* APIService.swift in Sources */,
 				344D74CF2ABB61D9007F7253 /* SearchView.swift in Sources */,
 				348B73042ABC9865000DFF45 /* AlbumSectionView.swift in Sources */,
+				34ECBF382ABEEFB700C9A2B0 /* AlbumDetailView.swift in Sources */,
 				34DB29782AB5C1F8004F2492 /* Song.swift in Sources */,
 				348B72F92ABC8CD5000DFF45 /* ObjectImageView.swift in Sources */,
 				34DB297C2AB5C4B7004F2492 /* AlbumListView.swift in Sources */,
