@@ -99,4 +99,12 @@ class APIService {
         
         fetch(type: SongResult.self, url: url, completion: completion)
     }
+    
+    // MARK: - Fetch songs for AlbumDetailView
+    func fetchSongsForAlbumDetail(albumId: Int,
+                                 completion: @escaping (Result<SongResult, APIError>) -> Void) {
+        
+        let url = createDetailURL(id: albumId, entityType: .song)
+        fetch(type: SongResult.self, url: url, completion: completion)
+    }
 }
