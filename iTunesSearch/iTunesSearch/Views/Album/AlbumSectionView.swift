@@ -1,7 +1,7 @@
 //
 //  AlbumSectionView.swift
 //  iTunesSearch
-//
+//  Called in SearchAllListView
 //  Created by Uri on 21/9/23.
 //
 

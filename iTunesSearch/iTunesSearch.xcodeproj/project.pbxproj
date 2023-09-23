@@ -39,6 +39,7 @@
 		34DB297C2AB5C4B7004F2492 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */; };
 		34E9CA862AB71AA700E132A1 /* AlbumSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */; };
 		34ECBF382ABEEFB700C9A2B0 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */; };
+		34ECBF3A2ABEF20A00C9A2B0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ECBF392ABEF20A00C9A2B0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
 		34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchView.swift; sourceTree = "<group>"; };
 		34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
+		34ECBF392ABEF20A00C9A2B0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				344112D52ABC5D8000672F7B /* Styling */,
 				344D74D02ABB625A007F7253 /* EntityType.swift */,
+				34ECBF392ABEF20A00C9A2B0 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				344112D72ABC5D9000672F7B /* BuyButtonStyle.swift in Sources */,
 				34DB297A2AB5C204004F2492 /* Movie.swift in Sources */,
 				34DB29632AB5BDF8004F2492 /* iTunesSearchApp.swift in Sources */,
+				34ECBF3A2ABEF20A00C9A2B0 /* Extensions.swift in Sources */,
 				348B72F72ABC8BFE000DFF45 /* AlbumRowView.swift in Sources */,
 				348B72FC2ABC8EED000DFF45 /* BuyButton.swift in Sources */,
 				34DB29742AB5BF57004F2492 /* Album.swift in Sources */,
