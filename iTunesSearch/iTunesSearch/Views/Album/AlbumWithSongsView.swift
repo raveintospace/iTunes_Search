@@ -14,7 +14,10 @@ struct AlbumWithSongsView: View {
     var body: some View {
         VStack {
             ForEach(albumWithSongsViewModel.songsInAlbum) { song in
-                Text("\(song.trackNumber)")
+                HStack {
+                    Text("\(song.trackNumber)")
+                }
+                
             }
         }
     }
