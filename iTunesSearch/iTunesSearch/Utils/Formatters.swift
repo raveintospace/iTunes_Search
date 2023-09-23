@@ -1,5 +1,5 @@
 //
-//  Extensions.swift
+//  Formatters.swift
 //  iTunesSearch
 //
 //  Created by Uri on 23/9/23.
