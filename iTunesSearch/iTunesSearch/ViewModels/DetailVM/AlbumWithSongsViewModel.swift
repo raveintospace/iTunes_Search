@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SongsForAlbumListViewModel: ObservableObject {
+class AlbumWithSongsViewModel: ObservableObject {
     
     let albumId: Int
     @Published var songsInAlbum = [Song]()
