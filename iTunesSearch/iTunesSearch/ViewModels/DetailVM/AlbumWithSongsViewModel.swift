@@ -38,7 +38,7 @@ class AlbumWithSongsViewModel: ObservableObject {
                         _ = fetchedSongs.removeFirst()
                     }
                     
-                    self.songsInAlbum = fetchedSongs.sorted(by: { $0.trackNumber > $1.trackNumber })
+                    self.songsInAlbum = fetchedSongs.sorted(by: { $0.trackNumber < $1.trackNumber })
                     self.state = .good
                     
                 case .failure(let error):
