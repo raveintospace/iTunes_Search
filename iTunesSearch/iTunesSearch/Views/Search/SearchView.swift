@@ -68,10 +68,16 @@ struct SearchView: View {
             songListViewModel.searchTerm = searchTerm
         case .album:
             albumListViewModel.searchTerm = searchTerm
+            movieListViewModel.searchTerm = ""
+            songListViewModel.searchTerm = ""
         case .movie:
             movieListViewModel.searchTerm = searchTerm
+            albumListViewModel.searchTerm = ""
+            songListViewModel.searchTerm = ""
         case .song:
             songListViewModel.searchTerm = searchTerm
+            albumListViewModel.searchTerm = ""
+            movieListViewModel.searchTerm = ""
         }
     }
 }
