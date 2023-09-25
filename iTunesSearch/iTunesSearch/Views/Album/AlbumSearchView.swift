@@ -20,7 +20,7 @@ struct AlbumSearchView: View {
                 }
             }
             .searchable(text: $viewModel.searchTerm).autocorrectionDisabled()
-            .navigationTitle("Search Albums")
+            .navigationTitle("navigation-title-AlbumSearchView")
         }
     }
 }
@@ -31,7 +31,7 @@ struct AlbumPlaceholderView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Trending music artists")
+            Text("text-trendingMusicArtists")
                 .font(.largeTitle)
             ForEach(suggestions, id: \.self) { suggestion in
                 Button {

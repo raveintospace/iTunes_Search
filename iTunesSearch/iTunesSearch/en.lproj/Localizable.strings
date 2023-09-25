@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  iTunesSearch
+
+  Created by Uri on 25/9/23.
+  
+*/
+
+// MARK: - SearchAllListView
+"header-title-songs" = "Songs";
+"header-title-albums" = "Albums";
+"header-title-movies" = "Movies";
+"button-seeAll" = "See all";
+
+// MARK: - BuySongButton
+"text-albumOnly" = "Album only";
+
+// MARK: - SearchPlaceholderView
+"text-trendingArtists" = "Trending artists";
+
+// MARK: - AlbumSearchView
+"text-trendingMusicArtists" = "Trending music artists";
+"navigation-title-AlbumSearchView" = "Search Albums";
+
+// MARK: - MovieSearchView
+"text-trendingMovieArtists" = "Trending movie artists";
+"navigation-title-movieSearchView" = "Search Movies";
+
+// MARK: - SearchView
+"navigation-title-SearchView" = "Search";

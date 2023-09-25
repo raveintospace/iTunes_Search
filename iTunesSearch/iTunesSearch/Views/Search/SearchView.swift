@@ -48,7 +48,7 @@ struct SearchView: View {
                 }
             }
             .searchable(text: $searchTerm).autocorrectionDisabled()
-            .navigationTitle("Search")
+            .navigationTitle("navigation-title-SearchView")
             .navigationBarTitleDisplayMode(.inline)
         }
         .onChange(of: selectedEntityType, perform: { newValue in

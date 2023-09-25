@@ -17,14 +17,14 @@ struct SearchAllListView: View {
         ScrollView {
             LazyVStack {
                 HStack {
-                    Text("Songs")
+                    Text("header-title-songs")
                         .font(.title2)
                     Spacer()
                     NavigationLink {
                         SongListView(viewModel: songListViewModel)
                     } label: {
                         HStack {
-                            Text("See all")
+                            Text("button-seeAll")
                             Image(systemName: "chevron.right")
                         }
                     }
@@ -37,14 +37,14 @@ struct SearchAllListView: View {
                     .padding(.bottom)
                 
                 HStack {
-                    Text("Albums")
+                    Text("header-title-albums")
                         .font(.title2)
                     Spacer()
                     NavigationLink {
                         AlbumListView(viewModel: albumListViewModel)
                     } label: {
                         HStack {
-                            Text("See all")
+                            Text("button-seeAll")
                             Image(systemName: "chevron.right")
                         }
                     }
@@ -57,14 +57,14 @@ struct SearchAllListView: View {
                     .padding(.bottom)
                 
                 HStack {
-                    Text("Movies")
+                    Text("header-title-movies")
                         .font(.title2)
                     Spacer()
                     NavigationLink {
                         MovieListView(viewModel: movieListViewModel)
                     } label: {
                         HStack {
-                            Text("See all")
+                            Text("button-seeAll")
                             Image(systemName: "chevron.right")
                         }
                     }
