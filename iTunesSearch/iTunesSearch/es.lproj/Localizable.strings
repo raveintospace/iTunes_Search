@@ -5,3 +5,26 @@
   Created by Uri on 25/9/23.
   
 */
+
+// MARK: - SearchAllListView
+"header-title-songs" = "Canciones";
+"header-title-albums" = "Álbumes";
+"header-title-movies" = "Películas";
+"button-seeAll" = "Ver todo";
+
+// MARK: - BuySongButton
+"text-albumOnly" = "Sólo álbum";
+
+// MARK: - SearchPlaceholderView
+"text-trendingArtists" = "Artistas en tendencia";
+
+// MARK: - AlbumSearchView
+"text-trendingMusicArtists" = "Músicos en tendencia";
+"navigation-title-AlbumSearchView" = "Buscar Álbumes";
+
+// MARK: - MovieSearchView
+"text-trendingMovieArtists" = "Artistas de cine en tendencia";
+"navigation-title-movieSearchView" = "Buscar Películas";
+
+// MARK: - SearchView
+"navigation-title-SearchView" = "Buscar";
