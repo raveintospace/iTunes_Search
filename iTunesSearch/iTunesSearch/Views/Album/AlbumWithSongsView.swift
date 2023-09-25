@@ -13,21 +13,31 @@ struct AlbumWithSongsView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
-                ForEach(albumWithSongsViewModel.songsInAlbum) { song in
-                    HStack {
-                        Text("\(song.trackNumber)")
-                        Text(song.trackName)
-                        Text(formattedDuration(time: song.trackTimeMillis))
-                        
-                        Spacer()
-                        BuySongButton(urlString: song.previewURL,
-                                      price: song.trackPrice,
-                                      currency: song.currency)
+            
+            if albumWithSongsViewModel.state == .isLoading {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            } else {
+                VStack(alignment: .leading, spacing: 20) {
+                    ForEach(albumWithSongsViewModel.songsInAlbum) { song in
+                        HStack {
+                            Text("\(song.trackNumber)")
+                                .font(.footnote)
+                                .frame(width: 25, alignment: .trailing)
+                            Text(song.trackName)
+                            Spacer()
+                            Text(formattedDuration(time: song.trackTimeMillis))
+                                .font(.footnote)
+                                .frame(width: 50, alignment: .center)
+                            BuySongButton(urlString: song.previewURL,
+                                          price: song.trackPrice,
+                                          currency: song.currency)
+                        }
+                        Divider()
                     }
                 }
+                .padding([.vertical, .trailing])
             }
-            .padding()
         }
     }
 }

@@ -48,7 +48,7 @@ class AlbumWithSongsViewModel: ObservableObject {
     
     static func example() -> AlbumWithSongsViewModel {
         let vm = AlbumWithSongsViewModel(albumID: 1)
-        vm.songsInAlbum = [Song.songExample()]
+        vm.songsInAlbum = [Song.songExample(), Song.songExampleTwo()]
         return vm
     }
 }
