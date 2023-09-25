@@ -48,9 +48,21 @@ class APIService {
         
         if let currentPage = currentPage, let resultsLimit = resultsLimit {
             let offset = currentPage * resultsLimit
-            URLQueryItem(name: "limit", value: String(resultsLimit))
-            URLQueryItem(name: "offset", value: String(offset))
+            queryItems.append(URLQueryItem(name: "resultsLimit", value: String(resultsLimit)))
+            queryItems.append(URLQueryItem(name: "offset", value: String(offset)))
         }
+        
+        var components = URLComponents(string: baseURL)
+        components?.queryItems = queryItems
+        return components?.url
+    }
+    
+    // MARK: - Obtain URL for Detail views
+    func createDetailURL(id: Int, entityType: EntityType) -> URL? {
+        
+        let baseURL = "https://itunes.apple.com/lookup"
+        var queryItems = [URLQueryItem(name: "id", value: String(id)),
+                          URLQueryItem(name: "entity", value: entityType.rawValue)]
         
         var components = URLComponents(string: baseURL)
         components?.queryItems = queryItems
@@ -85,6 +97,14 @@ class APIService {
         
         let url = createURL(searchTerm: searchTerm, entityType: .song, currentPage: currentPage, resultsLimit: resultsLimit)
         
+        fetch(type: SongResult.self, url: url, completion: completion)
+    }
+    
+    // MARK: - Fetch songs for AlbumDetailView
+    func fetchSongsForAlbumDetail(albumId: Int,
+                                 completion: @escaping (Result<SongResult, APIError>) -> Void) {
+        
+        let url = createDetailURL(id: albumId, entityType: .song)
         fetch(type: SongResult.self, url: url, completion: completion)
     }
 }
