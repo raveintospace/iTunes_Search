@@ -33,6 +33,10 @@ struct AlbumHeaderDetailView: View {
             BuyButton(urlString: album.collectionViewURL, price: album.collectionPrice, currency: album.currency)
         }
         .padding()
+        .background(
+            Color(.systemBackground)
+                .edgesIgnoringSafeArea(.top)
+                .shadow(radius: 5))
     }
 }
 

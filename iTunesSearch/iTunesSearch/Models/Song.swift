@@ -14,7 +14,7 @@ struct SongResult: Codable {
 }
 
 // MARK: - Result
-struct Song: Codable, Identifiable {
+struct Song: Codable, Identifiable, Equatable {
     let wrapperType: String
     let artistID, collectionID: Int
     let id: Int

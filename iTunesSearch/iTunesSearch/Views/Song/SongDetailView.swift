@@ -26,7 +26,7 @@ struct SongDetailView: View {
                 ProgressView()
                     .progressViewStyle(.circular)
             }
-            AlbumWithSongsView(albumWithSongsViewModel: albumWithSongsViewModel)
+            AlbumWithSongsView(albumWithSongsViewModel: albumWithSongsViewModel, selectedSong: song)
         }
         .onAppear {
             albumWithSongsViewModel.fetch()

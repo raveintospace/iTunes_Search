@@ -21,7 +21,7 @@ struct AlbumDetailView: View {
         VStack {
             AlbumHeaderDetailView(album: album)
             
-            AlbumWithSongsView(albumWithSongsViewModel: albumWithSongsViewModel)
+            AlbumWithSongsView(albumWithSongsViewModel: albumWithSongsViewModel, selectedSong: nil)
         }
         .onAppear {
             albumWithSongsViewModel.fetch()
