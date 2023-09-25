@@ -30,7 +30,10 @@ class AlbumWithSongsViewModel: ObservableObject {
                     
                     // lesson 6 - remove first item to avoid having two #1 as trackNumber
                     var fetchedSongs = results.results
-                    _ = fetchedSongs.removeFirst()
+                    
+                    if results.resultCount > 0 {
+                        _ = fetchedSongs.removeFirst()
+                    }
                     
                     self.songsInAlbum = fetchedSongs
                     self.state = .good

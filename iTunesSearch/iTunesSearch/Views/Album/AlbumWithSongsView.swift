@@ -17,6 +17,8 @@ struct AlbumWithSongsView: View {
                 HStack {
                     Text("\(song.trackNumber)")
                     Text(song.trackName)
+                    
+                    Text(formattedDuration(time: song.trackTimeMillis))
                 }
                 
             }
