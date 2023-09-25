@@ -13,34 +13,18 @@ struct AlbumWithSongsView: View {
     let selectedSong: Song?
     
     var body: some View {
-        ScrollView {
-            
-            if albumWithSongsViewModel.state == .isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-            } else {
-                Grid(horizontalSpacing: 20) {
-                    ForEach(albumWithSongsViewModel.songsInAlbum) { song in
-                        GridRow {
-                            Text("\(song.trackNumber)")
-                                .font(.footnote)
-                                .gridColumnAlignment(.trailing)
-                            Text(song.trackName)
-                                .gridColumnAlignment(.leading)
-                            Spacer()
-                            Text(formattedDuration(time: song.trackTimeMillis))
-                                .font(.footnote)
-
-                            BuySongButton(urlString: song.previewURL,
-                                          price: song.trackPrice,
-                                          currency: song.currency)
+        // ScrollViewReader scrolls view programmatically to selected element
+        ScrollViewReader { proxy in
+            ScrollView {
+                if albumWithSongsViewModel.state == .isLoading {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                } else if albumWithSongsViewModel.songsInAlbum.count > 0 {
+                    SongGridView(songs: albumWithSongsViewModel.songsInAlbum, selectedSong: selectedSong)
+                        .onAppear {
+                            proxy.scrollTo(selectedSong?.trackNumber, anchor: .center)
                         }
-                        .foregroundColor(song == selectedSong ? Color.accentColor : Color(.label))
-                        
-                        Divider()
-                    }
                 }
-                .padding([.vertical, .leading])
             }
         }
     }
