@@ -25,9 +25,7 @@ class SongDetailViewModel: ObservableObject {
                 
                 switch result {
                 case .success(let results):
-                    let albums = results.results
-                    
-                    self.album = albums.first
+                    self.album = results.results.first
                     self.state = .good
                     
                 case .failure(let error):

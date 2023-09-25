@@ -20,6 +20,12 @@ struct SongDetailView: View {
     
     var body: some View {
         VStack {
+            if let album = songDetailViewModel.album {
+                AlbumHeaderDetailView(album: album)
+            } else {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            }
             AlbumWithSongsView(albumWithSongsViewModel: albumWithSongsViewModel)
         }
         .onAppear {
