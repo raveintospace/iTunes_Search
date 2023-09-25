@@ -7,8 +7,7 @@
 
 import Foundation
 
-// 2008-07-15T07:00:00Z
-
+// MARK: - Date from Api comes in format 2008-07-15T07:00:00Z
 func formattedDate(value: String) -> String {
     let dateFormatterGetter = DateFormatter()
     dateFormatterGetter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
@@ -24,4 +23,13 @@ func formattedDate(value: String) -> String {
     dateFormatter.timeZone = .none
     
     return dateFormatter.string(from: date)
+}
+
+// MARK: - Song duration from API comes in milliseconds
+func formattedDuration(time: Int) -> String {
+    let timeInSeconds = time / 1000
+    let interval = TimeInterval(timeInSeconds)
+    let formatter = DateComponentsFormatter()
+    
+    return formatter.string(from: interval) ?? ""
 }

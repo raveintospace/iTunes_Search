@@ -16,6 +16,7 @@ struct AlbumWithSongsView: View {
             ForEach(albumWithSongsViewModel.songsInAlbum) { song in
                 HStack {
                     Text("\(song.trackNumber)")
+                    Text(song.trackName)
                 }
                 
             }
