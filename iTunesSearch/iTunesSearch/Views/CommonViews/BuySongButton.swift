@@ -17,6 +17,8 @@ struct BuySongButton: View {
             BuyButton(urlString: urlString, price: price, currency: currency)
         } else {
             Text("Album Only")
+                .font(.footnote)
+                .foregroundColor(.gray)
         }
     }
 }

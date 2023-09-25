@@ -128,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				348B72FB2ABC8EED000DFF45 /* BuyButton.swift */,
-				348B72F82ABC8CD5000DFF45 /* ObjectImageView.swift */,
 				3415C0C42AC181BB002487B4 /* BuySongButton.swift */,
+				348B72F82ABC8CD5000DFF45 /* ObjectImageView.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
