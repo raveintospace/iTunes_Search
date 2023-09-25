@@ -26,7 +26,7 @@
 "navigation-title-AlbumSearchView" = "Search Albums";
 
 // MARK: - AlbumHeaderDetailView
-"%@ text-songs" = "%@ songs";
+"%lld text-songs" = "%lld songs";
 "text-released %@" = "Released: %@";
 
 // MARK: - MovieSearchView

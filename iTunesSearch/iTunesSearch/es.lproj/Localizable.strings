@@ -26,7 +26,7 @@
 "navigation-title-AlbumSearchView" = "Buscar Álbumes";
 
 // MARK: - AlbumHeaderDetailView
-"%@ text-songs" = "%@ canciones";
+"%lld text-songs" = "%lld canciones";
 "text-released %@" = "Lanzamiento: %@";
 
 // MARK: - MovieSearchView
@@ -37,4 +37,3 @@
 // picker
 // tabBar
 // dateformat in spanish
-// text-songs interpolation
