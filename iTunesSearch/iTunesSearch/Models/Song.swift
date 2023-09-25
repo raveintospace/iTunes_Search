@@ -117,7 +117,7 @@ struct Song: Codable, Identifiable {
     static func songExampleTwo() -> Song {
         Song(wrapperType: "Song",
              artistID: 1, collectionID: 1, id: 10, artistName: "Phuture Noize",
-             collectionName: "From Star to Stardust - Single", trackName: "From Star to Stardust", artistViewURL: "", collectionViewURL: "",
+             collectionName: "From Star to Stardust - Single", trackName: "Outro", artistViewURL: "", collectionViewURL: "",
              trackViewURL: "https://music.apple.com/us/album/from-star-to-stardust-extended-mix/1670290189?i=1670290191&uo=4",
              previewURL: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/16/7d/6b/167d6bf3-5f07-ad2a-5efd-72ac6892d636/mzaf_10900782558649856545.plus.aac.p.m4a",
              artworkUrl30: "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/31/d3/88/31d38806-7a6c-9002-99ce-87a00ed07046/8719244860449.png/30x30bb.jpg",

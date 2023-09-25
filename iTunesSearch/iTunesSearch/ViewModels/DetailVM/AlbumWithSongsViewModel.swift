@@ -15,12 +15,15 @@ class AlbumWithSongsViewModel: ObservableObject {
     
     private let apiService = APIService()
     
-    init(albumID: Int) {
-        self.albumId = albumID
-        fetchSongsForAlbumDetail(albumId: albumID)
+    init(albumId: Int) {
+        self.albumId = albumId
     }
     
-    func fetchSongsForAlbumDetail(albumId: Int) {
+    func fetch() {
+        fetchSongsForAlbumDetail(albumId: albumId)
+    }
+    
+    private func fetchSongsForAlbumDetail(albumId: Int) {
         apiService.fetchSongsForAlbumDetail(albumId: albumId) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
@@ -47,7 +50,7 @@ class AlbumWithSongsViewModel: ObservableObject {
     }
     
     static func example() -> AlbumWithSongsViewModel {
-        let vm = AlbumWithSongsViewModel(albumID: 1)
+        let vm = AlbumWithSongsViewModel(albumId: 1)
         vm.songsInAlbum = [Song.songExample(), Song.songExampleTwo()]
         return vm
     }

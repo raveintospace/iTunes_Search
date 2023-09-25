@@ -18,17 +18,18 @@ struct AlbumWithSongsView: View {
                 ProgressView()
                     .progressViewStyle(.circular)
             } else {
-                VStack(alignment: .leading, spacing: 20) {
+                Grid(horizontalSpacing: 20) {
                     ForEach(albumWithSongsViewModel.songsInAlbum) { song in
-                        HStack {
+                        GridRow {
                             Text("\(song.trackNumber)")
                                 .font(.footnote)
-                                .frame(width: 25, alignment: .trailing)
+                                .gridColumnAlignment(.trailing)
                             Text(song.trackName)
+                                .gridColumnAlignment(.leading)
                             Spacer()
                             Text(formattedDuration(time: song.trackTimeMillis))
                                 .font(.footnote)
-                                .frame(width: 50, alignment: .center)
+
                             BuySongButton(urlString: song.previewURL,
                                           price: song.trackPrice,
                                           currency: song.currency)
@@ -36,7 +37,7 @@ struct AlbumWithSongsView: View {
                         Divider()
                     }
                 }
-                .padding([.vertical, .trailing])
+                .padding([.vertical, .leading])
             }
         }
     }
