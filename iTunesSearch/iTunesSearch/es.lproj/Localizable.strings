@@ -18,13 +18,23 @@
 // MARK: - SearchPlaceholderView
 "text-trendingArtists" = "Artistas en tendencia";
 
+// MARK: - SearchView
+"navigation-title-SearchView" = "Buscar";
+
 // MARK: - AlbumSearchView
 "text-trendingMusicArtists" = "Músicos en tendencia";
 "navigation-title-AlbumSearchView" = "Buscar Álbumes";
+
+// MARK: - AlbumHeaderDetailView
+"%@ text-songs" = "%@ canciones";
+"text-released %@" = "Lanzamiento: %@";
 
 // MARK: - MovieSearchView
 "text-trendingMovieArtists" = "Artistas de cine en tendencia";
 "navigation-title-movieSearchView" = "Buscar Películas";
 
-// MARK: - SearchView
-"navigation-title-SearchView" = "Buscar";
+
+// picker
+// tabBar
+// dateformat in spanish
+// text-songs interpolation

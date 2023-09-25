@@ -18,13 +18,17 @@
 // MARK: - SearchPlaceholderView
 "text-trendingArtists" = "Trending artists";
 
+// MARK: - SearchView
+"navigation-title-SearchView" = "Search";
+
 // MARK: - AlbumSearchView
 "text-trendingMusicArtists" = "Trending music artists";
 "navigation-title-AlbumSearchView" = "Search Albums";
 
+// MARK: - AlbumHeaderDetailView
+"%@ text-songs" = "%@ songs";
+"text-released %@" = "Released: %@";
+
 // MARK: - MovieSearchView
 "text-trendingMovieArtists" = "Trending movie artists";
 "navigation-title-movieSearchView" = "Search Movies";
-
-// MARK: - SearchView
-"navigation-title-SearchView" = "Search";
