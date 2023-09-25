@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3415C0C52AC181BB002487B4 /* BuySongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415C0C42AC181BB002487B4 /* BuySongButton.swift */; };
+		3415C0E52AC197FA002487B4 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3415C0E42AC197F9002487B4 /* SongDetailView.swift */; };
 		3423E8F92AB747F200DD9860 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423E8F82AB747F200DD9860 /* APIError.swift */; };
 		3423E8FB2AB7514F00DD9860 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3423E8FA2AB7514F00DD9860 /* APIService.swift */; };
 		344112CC2ABC400E00672F7B /* SearchAllListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344112CB2ABC400E00672F7B /* SearchAllListView.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		3415C0C42AC181BB002487B4 /* BuySongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySongButton.swift; sourceTree = "<group>"; };
+		3415C0E42AC197F9002487B4 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
 		3423E8F82AB747F200DD9860 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3423E8FA2AB7514F00DD9860 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		344112CB2ABC400E00672F7B /* SearchAllListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllListView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				344112CD2ABC413900672F7B /* SongListView.swift */,
 				344112D32ABC5C8400672F7B /* SongRowView.swift */,
 				348B72FF2ABC9842000DFF45 /* SongSectionView.swift */,
+				3415C0E42AC197F9002487B4 /* SongDetailView.swift */,
 			);
 			path = Song;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				344112CE2ABC413900672F7B /* SongListView.swift in Sources */,
 				344112D72ABC5D9000672F7B /* BuyButtonStyle.swift in Sources */,
 				34DB297A2AB5C204004F2492 /* Movie.swift in Sources */,
+				3415C0E52AC197FA002487B4 /* SongDetailView.swift in Sources */,
 				34DB29632AB5BDF8004F2492 /* iTunesSearchApp.swift in Sources */,
 				34ECBF3A2ABEF20A00C9A2B0 /* Formatters.swift in Sources */,
 				348B72F72ABC8BFE000DFF45 /* AlbumRowView.swift in Sources */,
