@@ -24,7 +24,7 @@ class AlbumWithSongsViewModel: ObservableObject {
     }
     
     private func fetchSongsForAlbumDetail(albumId: Int) {
-        apiService.fetchSongsForAlbumDetail(albumId: albumId) { [weak self] result in
+        apiService.fetchSongsForAlbumDetailView(albumId: albumId) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 

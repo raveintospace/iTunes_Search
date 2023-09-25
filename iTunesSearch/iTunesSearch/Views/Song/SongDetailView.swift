@@ -10,8 +10,22 @@ import SwiftUI
 struct SongDetailView: View {
     let song: Song
     
+    @StateObject var albumWithSongsViewModel: AlbumWithSongsViewModel
+    @StateObject var songDetailViewModel = SongDetailViewModel()
+    
+    init(song: Song) {
+        self.song = song
+        self._albumWithSongsViewModel = StateObject(wrappedValue: AlbumWithSongsViewModel(albumId: song.collectionID))
+    }
+    
     var body: some View {
-        Text(song.trackName)
+        VStack {
+            AlbumWithSongsView(albumWithSongsViewModel: albumWithSongsViewModel)
+        }
+        .onAppear {
+            albumWithSongsViewModel.fetch()
+            songDetailViewModel.fetch(song: song)
+        }
     }
 }
 
