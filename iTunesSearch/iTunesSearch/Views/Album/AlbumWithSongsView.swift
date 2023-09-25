@@ -17,10 +17,12 @@ struct AlbumWithSongsView: View {
                 HStack {
                     Text("\(song.trackNumber)")
                     Text(song.trackName)
-                    
                     Text(formattedDuration(time: song.trackTimeMillis))
+                    
+                    BuySongButton(urlString: song.previewURL,
+                                  price: song.trackPrice,
+                                  currency: song.currency)
                 }
-                
             }
         }
     }
