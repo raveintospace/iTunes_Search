@@ -24,7 +24,7 @@ class AlbumWithSongsViewModel: ObservableObject {
     }
     
     private func fetchSongsForAlbumDetail(albumId: Int) {
-        apiService.fetchSongsForAlbumDetail(albumId: albumId) { [weak self] result in
+        apiService.fetchSongsForAlbumDetailView(albumId: albumId) { [weak self] result in
             DispatchQueue.main.async {
                 guard let self = self else { return }
                 
@@ -38,7 +38,7 @@ class AlbumWithSongsViewModel: ObservableObject {
                         _ = fetchedSongs.removeFirst()
                     }
                     
-                    self.songsInAlbum = fetchedSongs
+                    self.songsInAlbum = fetchedSongs.sorted(by: { $0.trackNumber > $1.trackNumber })
                     self.state = .good
                     
                 case .failure(let error):

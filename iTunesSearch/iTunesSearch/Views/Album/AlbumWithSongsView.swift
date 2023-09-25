@@ -10,34 +10,21 @@ import SwiftUI
 struct AlbumWithSongsView: View {
     
     @ObservedObject var albumWithSongsViewModel: AlbumWithSongsViewModel
+    let selectedSong: Song?
     
     var body: some View {
-        ScrollView {
-            
-            if albumWithSongsViewModel.state == .isLoading {
-                ProgressView()
-                    .progressViewStyle(.circular)
-            } else {
-                Grid(horizontalSpacing: 20) {
-                    ForEach(albumWithSongsViewModel.songsInAlbum) { song in
-                        GridRow {
-                            Text("\(song.trackNumber)")
-                                .font(.footnote)
-                                .gridColumnAlignment(.trailing)
-                            Text(song.trackName)
-                                .gridColumnAlignment(.leading)
-                            Spacer()
-                            Text(formattedDuration(time: song.trackTimeMillis))
-                                .font(.footnote)
-
-                            BuySongButton(urlString: song.previewURL,
-                                          price: song.trackPrice,
-                                          currency: song.currency)
+        // ScrollViewReader scrolls view programmatically to selected element
+        ScrollViewReader { proxy in
+            ScrollView {
+                if albumWithSongsViewModel.state == .isLoading {
+                    ProgressView()
+                        .progressViewStyle(.circular)
+                } else if albumWithSongsViewModel.songsInAlbum.count > 0 {
+                    SongGridView(songs: albumWithSongsViewModel.songsInAlbum, selectedSong: selectedSong)
+                        .onAppear {
+                            proxy.scrollTo(selectedSong?.trackNumber, anchor: .center)
                         }
-                        Divider()
-                    }
                 }
-                .padding([.vertical, .leading])
             }
         }
     }
@@ -45,6 +32,6 @@ struct AlbumWithSongsView: View {
 
 struct AlbumWithSongsView_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumWithSongsView(albumWithSongsViewModel: AlbumWithSongsViewModel.example())
+        AlbumWithSongsView(albumWithSongsViewModel: AlbumWithSongsViewModel.example(), selectedSong: nil)
     }
 }
