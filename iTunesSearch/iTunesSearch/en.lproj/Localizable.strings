@@ -43,3 +43,6 @@
 "tabBar-search" = "Search";
 "tabBar-albums" = "Albums";
 "tabBar-movies" = "Movies";
+
+// MARK: - DateFormatter
+"locale" = "en_us";
