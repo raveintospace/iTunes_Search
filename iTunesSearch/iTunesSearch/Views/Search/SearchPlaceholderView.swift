@@ -13,7 +13,7 @@ struct SearchPlaceholderView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Trending artists")
+            Text("text-trendingArtists")
                 .font(.largeTitle)
             ForEach(suggestions, id: \.self) { suggestion in
                 Button {

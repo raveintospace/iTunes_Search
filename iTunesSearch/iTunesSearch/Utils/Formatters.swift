@@ -17,8 +17,10 @@ func formattedDate(value: String) -> String {
     }
     
     // use date format from user device
+    let customLocale = NSLocale.init(localeIdentifier: NSLocalizedString("locale", comment: "dates' locale"))
+    
     let dateFormatter = DateFormatter()
-    dateFormatter.locale = Locale.current
+    dateFormatter.locale = customLocale as Locale
     dateFormatter.dateStyle = .medium
     dateFormatter.timeZone = .none
     

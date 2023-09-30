@@ -22,8 +22,8 @@ struct AlbumHeaderDetailView: View {
                     .padding(.bottom, 5)
                 
                 Text(album.primaryGenreName)
-                Text("\(album.trackCount) songs")
-                Text("Released: \(formattedDate(value: album.releaseDate))")
+                Text("\(album.trackCount) text-songs")
+                Text("text-released \(formattedDate(value: album.releaseDate))")
             }
             .font(.caption)
             .foregroundColor(.gray)

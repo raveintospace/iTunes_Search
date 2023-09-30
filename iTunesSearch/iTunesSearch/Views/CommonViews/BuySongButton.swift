@@ -16,7 +16,7 @@ struct BuySongButton: View {
         if let price = price {
             BuyButton(urlString: urlString, price: price, currency: currency)
         } else {
-            Text("Album Only")
+            Text("text-albumOnly")
                 .font(.footnote)
                 .foregroundColor(.gray)
         }
@@ -25,6 +25,6 @@ struct BuySongButton: View {
 
 struct BuySongButton_Previews: PreviewProvider {
     static var previews: some View {
-        BuySongButton(urlString: Song.songExample().previewURL, price: 9.99, currency: "USD")
+        BuySongButton(urlString: Song.songExample().previewURL, price: nil, currency: "USD")
     }
 }

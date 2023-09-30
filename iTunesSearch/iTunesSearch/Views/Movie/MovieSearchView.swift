@@ -20,7 +20,7 @@ struct MovieSearchView: View {
                 }
             }
             .searchable(text: $viewModel.searchTerm).autocorrectionDisabled()
-            .navigationTitle("Search Movies")
+            .navigationTitle("navigation-title-movieSearchView")
         }
     }
 }
@@ -31,8 +31,9 @@ struct MoviePlaceholderView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Trending movie artists")
+            Text("text-trendingMovieArtists")
                 .font(.largeTitle)
+                .multilineTextAlignment(.center)
             ForEach(suggestions, id: \.self) { suggestion in
                 Button {
                     searchTerm = suggestion

@@ -14,15 +14,19 @@ struct AlbumSectionView: View {
         ScrollView(.horizontal) {
             LazyHStack(alignment: .top) {
                 ForEach(albums) { album in
-                    VStack(alignment: .leading) {
-                        ObjectImageView(urlString: album.artworkUrl100, size: 100)
-                        Text(album.collectionName)
-                        Text(album.artistName)
-                            .foregroundColor(.gray)
+                    NavigationLink {
+                        AlbumDetailView(album: album)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            ObjectImageView(urlString: album.artworkUrl100, size: 100)
+                            Text(album.collectionName)
+                            Text(album.artistName)
+                                .foregroundColor(.gray)
+                        }
+                        .lineLimit(2)
+                        .frame(width: 100)
+                        .font(.caption)
                     }
-                    .lineLimit(2)
-                    .frame(width: 100)
-                    .font(.caption)
                 }
             }
             .padding([.horizontal, .bottom])
@@ -35,3 +39,13 @@ struct AlbumSectionView_Previews: PreviewProvider {
         AlbumSectionView(albums: [Album.albumExample()])
     }
 }
+
+/*
+ NavigationLink {
+     SongDetailView(song: song)
+ } label: {
+     SongRowView(song: song)
+         .frame(width: 300)
+ }
+ .buttonStyle(.plain)
+ */
