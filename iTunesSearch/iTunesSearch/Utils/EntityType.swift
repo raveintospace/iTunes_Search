@@ -17,6 +17,7 @@ enum EntityType: String, Identifiable, CaseIterable {
         self.rawValue
     }
     
+    // not used with app translated
     func generateName() -> String {
         switch self {
         case .all:

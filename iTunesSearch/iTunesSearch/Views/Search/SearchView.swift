@@ -19,10 +19,10 @@ struct SearchView: View {
         NavigationView {
             VStack {
                 Picker("Select the media", selection: $selectedEntityType) {
-                    ForEach(EntityType.allCases) { type in
-                        Text(type.generateName())
-                            .tag(type)
-                    }
+                    Text(NSLocalizedString("picker-all", comment: "")).tag(EntityType.all)
+                    Text(NSLocalizedString("picker-album", comment: "")).tag(EntityType.album)
+                    Text(NSLocalizedString("picker-movie", comment: "")).tag(EntityType.movie)
+                    Text(NSLocalizedString("picker-song", comment: "")).tag(EntityType.song)
                 }
                 .pickerStyle(.segmented)
                 .padding(.horizontal)

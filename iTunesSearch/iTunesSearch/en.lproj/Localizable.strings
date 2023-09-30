@@ -32,3 +32,10 @@
 // MARK: - MovieSearchView
 "text-trendingMovieArtists" = "Trending movie artists";
 "navigation-title-movieSearchView" = "Search Movies";
+
+// MARK: - Picker
+"picker-all" = "All";
+"picker-album" = "Albums";
+"picker-movie" = "Movies";
+"picker-song" = "Songs";
+

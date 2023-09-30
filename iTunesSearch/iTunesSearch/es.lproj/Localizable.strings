@@ -33,7 +33,12 @@
 "text-trendingMovieArtists" = "Artistas de cine en tendencia";
 "navigation-title-movieSearchView" = "Buscar Películas";
 
+// MARK: - Picker
+"picker-all" = "Todo";
+"picker-album" = "Álbumes";
+"picker-movie" = "Películas";
+"picker-song" = "Canciones";
 
-// picker
+// picker - https://medium.com/@fthibault99/create-enum-localization-string-and-picker-with-chatgpt-d2ec94fa328e
 // tabBar
 // dateformat in spanish
