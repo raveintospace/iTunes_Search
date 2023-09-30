@@ -88,33 +88,33 @@ struct Movie: Codable, Identifiable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.wrapperType = try container.decode(String.self, forKey: .wrapperType)
         self.kind = try container.decode(String.self, forKey: .kind)
-        self.artistID = try container.decodeIfPresent(Int.self, forKey: .artistID)
+        self.artistID = try container.decodeIfPresent(Int.self, forKey: .artistID) ?? 0
         self.trackID = try container.decode(Int.self, forKey: .trackID)
         self.artistName = try container.decode(String.self, forKey: .artistName)
         self.trackName = try container.decode(String.self, forKey: .trackName)
         self.trackCensoredName = try container.decode(String.self, forKey: .trackCensoredName)
-        self.artistViewURL = try container.decodeIfPresent(String.self, forKey: .artistViewURL)
+        self.artistViewURL = try container.decodeIfPresent(String.self, forKey: .artistViewURL) ?? "No artistViewURL"
         self.trackViewURL = try container.decode(String.self, forKey: .trackViewURL)
-        self.previewURL = try container.decodeIfPresent(String.self, forKey: .previewURL)
+        self.previewURL = try container.decodeIfPresent(String.self, forKey: .previewURL) ?? "No previewURL"
         self.artworkUrl30 = try container.decode(String.self, forKey: .artworkUrl30)
         self.artworkUrl60 = try container.decode(String.self, forKey: .artworkUrl60)
         self.artworkUrl100 = try container.decode(String.self, forKey: .artworkUrl100)
-        self.collectionPrice = try container.decodeIfPresent(Double.self, forKey: .collectionPrice)
-        self.trackPrice = try container.decodeIfPresent(Double.self, forKey: .trackPrice)
-        self.trackRentalPrice = try container.decodeIfPresent(Double.self, forKey: .trackRentalPrice)
-        self.collectionHDPrice = try container.decodeIfPresent(Double.self, forKey: .collectionHDPrice)
-        self.trackHDPrice = try container.decodeIfPresent(Double.self, forKey: .trackHDPrice)
-        self.trackHDRentalPrice = try container.decodeIfPresent(Double.self, forKey: .trackHDRentalPrice)
+        self.collectionPrice = try container.decodeIfPresent(Double.self, forKey: .collectionPrice) ?? 0
+        self.trackPrice = try container.decodeIfPresent(Double.self, forKey: .trackPrice) ?? 0
+        self.trackRentalPrice = try container.decodeIfPresent(Double.self, forKey: .trackRentalPrice) ?? 0
+        self.collectionHDPrice = try container.decodeIfPresent(Double.self, forKey: .collectionHDPrice) ?? 0
+        self.trackHDPrice = try container.decodeIfPresent(Double.self, forKey: .trackHDPrice) ?? 0
+        self.trackHDRentalPrice = try container.decodeIfPresent(Double.self, forKey: .trackHDRentalPrice) ?? 0
         self.releaseDate = try container.decode(String.self, forKey: .releaseDate)
         self.collectionExplicitness = try container.decode(String.self, forKey: .collectionExplicitness)
         self.trackExplicitness = try container.decode(String.self, forKey: .trackExplicitness)
-        self.trackTimeMillis = try container.decodeIfPresent(Int.self, forKey: .trackTimeMillis)
+        self.trackTimeMillis = try container.decodeIfPresent(Int.self, forKey: .trackTimeMillis) ?? 0
         self.country = try container.decode(String.self, forKey: .country)
         self.currency = try container.decode(String.self, forKey: .currency)
         self.primaryGenreName = try container.decode(String.self, forKey: .primaryGenreName)
         self.contentAdvisoryRating = try container.decode(String.self, forKey: .contentAdvisoryRating)
-        self.shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription)
-        self.longDescription = try container.decodeIfPresent(String.self, forKey: .longDescription) ?? "No available description"
+        self.shortDescription = try container.decodeIfPresent(String.self, forKey: .shortDescription) ?? "No available short description"
+        self.longDescription = try container.decodeIfPresent(String.self, forKey: .longDescription) ?? "No available long description"
     }
     
     static func movieExample() -> Movie {
