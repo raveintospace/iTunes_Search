@@ -31,6 +31,7 @@
 		348B73042ABC9865000DFF45 /* AlbumSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348B73032ABC9865000DFF45 /* AlbumSectionView.swift */; };
 		349359722AC86210003D4F40 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349359712AC86210003D4F40 /* MovieDetailView.swift */; };
 		349359742AC870E1003D4F40 /* MovieHeaderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349359732AC870E1003D4F40 /* MovieHeaderDetailView.swift */; };
+		349359772AC87D64003D4F40 /* ExpandableText in Frameworks */ = {isa = PBXBuildFile; productRef = 349359762AC87D64003D4F40 /* ExpandableText */; };
 		34BE0C872AC1DC9800068452 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 34BE0C892AC1DC9800068452 /* Localizable.strings */; };
 		34D9FBDE2AB9FF710055427B /* SongListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9FBDD2AB9FF710055427B /* SongListViewModel.swift */; };
 		34D9FBE12ABA00030055427B /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D9FBE02ABA00030055427B /* FetchState.swift */; };
@@ -107,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349359772AC87D64003D4F40 /* ExpandableText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +310,9 @@
 			dependencies = (
 			);
 			name = iTunesSearch;
+			packageProductDependencies = (
+				349359762AC87D64003D4F40 /* ExpandableText */,
+			);
 			productName = iTunesSearch;
 			productReference = 34DB295F2AB5BDF8004F2492 /* iTunesSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -337,6 +342,9 @@
 				es,
 			);
 			mainGroup = 34DB29562AB5BDF7004F2492;
+			packageReferences = (
+				349359752AC87D64003D4F40 /* XCRemoteSwiftPackageReference "ExpandableText" */,
+			);
 			productRefGroup = 34DB29602AB5BDF8004F2492 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -619,6 +627,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		349359752AC87D64003D4F40 /* XCRemoteSwiftPackageReference "ExpandableText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/n3d1117/ExpandableText";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		349359762AC87D64003D4F40 /* ExpandableText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 349359752AC87D64003D4F40 /* XCRemoteSwiftPackageReference "ExpandableText" */;
+			productName = ExpandableText;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34DB29572AB5BDF7004F2492 /* Project object */;
 }

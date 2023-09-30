@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "expandabletext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/n3d1117/ExpandableText",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0a8b3fe05320ffa815549e0ecfa47139767d5565"
+      }
+    }
+  ],
+  "version" : 2
+}
