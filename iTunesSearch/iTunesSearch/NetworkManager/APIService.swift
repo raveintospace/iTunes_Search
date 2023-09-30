@@ -41,7 +41,7 @@ class APIService {
     // MARK: - Solves multi words searchTerms
     func createURL(searchTerm: String, entityType: EntityType, currentPage: Int?, resultsLimit: Int?) -> URL? {
         
-        let baseURL = URLConstants().baseURL
+        let baseURL = URLConstants.baseURL
         var queryItems = [URLQueryItem(name: "term", value: searchTerm),
                           URLQueryItem(name: "entity", value: entityType.rawValue)]
         
@@ -60,7 +60,7 @@ class APIService {
     // MARK: - Obtain URL for Detail views
     func createDetailURL(id: Int, entityType: EntityType) -> URL? {
         
-        let detailURL = URLConstants().detailURL
+        let detailURL = URLConstants.detailURL
         var queryItems = [URLQueryItem(name: "id", value: String(id)),
                           URLQueryItem(name: "entity", value: entityType.rawValue)]
         

@@ -8,6 +8,6 @@
 import Foundation
 
 struct URLConstants {
-    let baseURL = "https://itunes.apple.com/search"
-    let detailURL = "https://itunes.apple.com/lookup"
+    static let baseURL = "https://itunes.apple.com/search"
+    static let detailURL = "https://itunes.apple.com/lookup"
 }
