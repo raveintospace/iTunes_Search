@@ -21,7 +21,6 @@ func formattedDate(value: String) -> String {
     
     let dateFormatter = DateFormatter()
     dateFormatter.locale = customLocale as Locale
-    //     dateFormatter.locale = Locale.current
     dateFormatter.dateStyle = .medium
     dateFormatter.timeZone = .none
     
