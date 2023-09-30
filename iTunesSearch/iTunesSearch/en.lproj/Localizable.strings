@@ -39,3 +39,7 @@
 "picker-movie" = "Movies";
 "picker-song" = "Songs";
 
+// MARK: - TabBar
+"tabBar-search" = "Search";
+"tabBar-albums" = "Albums";
+"tabBar-movies" = "Movies";

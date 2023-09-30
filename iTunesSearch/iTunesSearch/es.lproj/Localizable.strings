@@ -39,6 +39,10 @@
 "picker-movie" = "Películas";
 "picker-song" = "Canciones";
 
+// MARK: - TabBar
+"tabBar-search" = "Buscar";
+"tabBar-albums" = "Álbumes";
+"tabBar-movies" = "Películas";
+
 // picker - https://medium.com/@fthibault99/create-enum-localization-string-and-picker-with-chatgpt-d2ec94fa328e
-// tabBar
 // dateformat in spanish

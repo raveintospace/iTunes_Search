@@ -12,15 +12,15 @@ struct ContentView: View {
         TabView {
             SearchView()
                 .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
+                    Label("tabBar-search", systemImage: "magnifyingglass")
                 }
             AlbumSearchView()
                 .tabItem {
-                    Label("Albums", systemImage: "music.note")
+                    Label("tabBar-albums", systemImage: "music.note")
                 }
             MovieSearchView()
                 .tabItem {
-                    Label("Movies", systemImage: "tv")
+                    Label("tabBar-movies", systemImage: "tv")
                 }
         } 
     }
