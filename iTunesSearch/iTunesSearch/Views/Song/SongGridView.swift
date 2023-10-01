@@ -21,7 +21,7 @@ struct SongGridView: View {
                     Text(song.trackName)
                         .gridColumnAlignment(.leading)
                     Spacer()
-                    Text(formattedDuration(time: song.trackTimeMillis))
+                    Text(formattedDurationSong(time: song.trackTimeMillis))
                         .font(.footnote)
                     
                     BuySongButton(urlString: song.previewURL,

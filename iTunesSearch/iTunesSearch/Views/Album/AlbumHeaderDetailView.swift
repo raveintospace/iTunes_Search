@@ -17,9 +17,10 @@ struct AlbumHeaderDetailView: View {
                 Text(album.collectionName)
                     .font(.footnote)
                     .foregroundColor(Color(.label))
-                
+                    .offset(y: -15)
                 Text(album.artistName)
                     .padding(.bottom, 5)
+                    .offset(y: -15)
                 
                 Text(album.primaryGenreName)
                 Text("\(album.trackCount) text-songs")

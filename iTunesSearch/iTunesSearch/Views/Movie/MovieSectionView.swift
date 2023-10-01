@@ -14,15 +14,21 @@ struct MovieSectionView: View {
         ScrollView(.horizontal) {
             LazyHStack(alignment: .top, spacing: 0) {
                 ForEach(movies) { movie in
-                    VStack(alignment: .leading) {
-                        ObjectImageView(urlString: movie.artworkUrl100, size: 100)
-                        Text(movie.trackName)
-                        Text(movie.primaryGenreName)
-                            .foregroundColor(.gray)
+                    NavigationLink {
+                        MovieDetailView(movie: movie)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            ObjectImageView(urlString: movie.artworkUrl100, size: 100)
+                            Text(movie.trackName)
+                                .multilineTextAlignment(.leading)
+                            Text(movie.primaryGenreName)
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.leading)
+                        }
+                        .lineLimit(2)
+                        .frame(width: 80)
+                        .font(.caption)
                     }
-                    .lineLimit(2)
-                    .frame(width: 80)
-                    .font(.caption)
                 }
             }
             .padding([.horizontal, .bottom])

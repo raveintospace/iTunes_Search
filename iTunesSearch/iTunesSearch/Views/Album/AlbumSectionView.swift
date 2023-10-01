@@ -20,8 +20,10 @@ struct AlbumSectionView: View {
                         VStack(alignment: .leading) {
                             ObjectImageView(urlString: album.artworkUrl100, size: 100)
                             Text(album.collectionName)
+                                .multilineTextAlignment(.leading)
                             Text(album.artistName)
                                 .foregroundColor(.gray)
+                                .multilineTextAlignment(.leading)
                         }
                         .lineLimit(2)
                         .frame(width: 100)
