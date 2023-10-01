@@ -9,7 +9,8 @@ This app features:
 <li>Simultaneous API calls</li>
 <li>Combine</li>
 <li>A content view with TabViews</li>
-<li>ButtonStyle to customize buttons</li>ButtonStyle to customize buttons
+<li>ButtonStyle to customize buttons</li>
+<li>ButtonStyle to customize buttons</li>
 <li>Grids & LazyStacks</li>
 <li>Localizable with interpolation</li>
 <li>DateFormat for multiple countries</li>
