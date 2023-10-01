@@ -1,18 +1,20 @@
 # iTunes Search
-<br />
+<br/>
 iTunes replica to learn API Calls &amp; Pagination, using SwiftUI &amp; MVVM
-<br />
-<br />
+<br/>
+<br/>
 This app features: 
-- MVVM architecture
-- Simultaneous API calls
-- Combine
-- A content view with TabViews
-- ButtonStyle to customize buttons
-- Grids & LazyStacks
-- Localizable with interpolation
-- DateFormat for multiple countries
-- ExpandableText package
-<br />
-<br />
+<ul>
+<li>MVVM architecture</li>
+<li>Simultaneous API calls</li>
+<li>Combine</li>
+<li>A content view with TabViews</li>
+<li>ButtonStyle to customize buttons</li>ButtonStyle to customize buttons
+<li>Grids & LazyStacks</li>
+<li>Localizable with interpolation</li>
+<li>DateFormat for multiple countries</li>
+<li>ExpandableText package</li>
+</ul>
+<br/>
+<br/>
 This app is based on Karin Prater's Youtube tutorial: www.youtube.com/watch?v=LT0cawkgXqM&t=0s
