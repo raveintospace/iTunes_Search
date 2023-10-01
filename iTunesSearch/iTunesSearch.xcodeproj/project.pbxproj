@@ -48,6 +48,8 @@
 		34DB297A2AB5C204004F2492 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB29792AB5C204004F2492 /* Movie.swift */; };
 		34DB297C2AB5C4B7004F2492 /* AlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */; };
 		34DDD6902ABF329E00B14DEF /* AlbumWithSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DDD68F2ABF329E00B14DEF /* AlbumWithSongsView.swift */; };
+		34DEA3AE2AC984FE00B7A2B6 /* MovieAboutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA3AD2AC984FE00B7A2B6 /* MovieAboutDetailView.swift */; };
+		34DEA3B02AC9857200B7A2B6 /* MovieInfoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DEA3AF2AC9857200B7A2B6 /* MovieInfoDetailView.swift */; };
 		34E9CA862AB71AA700E132A1 /* AlbumSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */; };
 		34ECBF382ABEEFB700C9A2B0 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */; };
 		34ECBF3A2ABEF20A00C9A2B0 /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ECBF392ABEF20A00C9A2B0 /* Formatters.swift */; };
@@ -97,6 +99,8 @@
 		34DB29792AB5C204004F2492 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		34DB297B2AB5C4B7004F2492 /* AlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListView.swift; sourceTree = "<group>"; };
 		34DDD68F2ABF329E00B14DEF /* AlbumWithSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumWithSongsView.swift; sourceTree = "<group>"; };
+		34DEA3AD2AC984FE00B7A2B6 /* MovieAboutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAboutDetailView.swift; sourceTree = "<group>"; };
+		34DEA3AF2AC9857200B7A2B6 /* MovieInfoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoDetailView.swift; sourceTree = "<group>"; };
 		34E9CA852AB71AA700E132A1 /* AlbumSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSearchView.swift; sourceTree = "<group>"; };
 		34ECBF372ABEEFB700C9A2B0 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 		34ECBF392ABEF20A00C9A2B0 /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
@@ -187,6 +191,8 @@
 				348B73012ABC985C000DFF45 /* MovieSectionView.swift */,
 				349359712AC86210003D4F40 /* MovieDetailView.swift */,
 				349359732AC870E1003D4F40 /* MovieHeaderDetailView.swift */,
+				34DEA3AD2AC984FE00B7A2B6 /* MovieAboutDetailView.swift */,
+				34DEA3AF2AC9857200B7A2B6 /* MovieInfoDetailView.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				348B73022ABC985C000DFF45 /* MovieSectionView.swift in Sources */,
 				34DB29762AB5BF83004F2492 /* AlbumListViewModel.swift in Sources */,
 				349359742AC870E1003D4F40 /* MovieHeaderDetailView.swift in Sources */,
+				34DEA3B02AC9857200B7A2B6 /* MovieInfoDetailView.swift in Sources */,
 				348B72FE2ABC92D7000DFF45 /* MovieRowView.swift in Sources */,
 				34D9FBE92ABA02A10055427B /* MovieSearchView.swift in Sources */,
 				345C94332AC83F2F003C3185 /* URLConstants.swift in Sources */,
@@ -388,6 +395,7 @@
 				344112D02ABC454100672F7B /* SearchPlaceholderView.swift in Sources */,
 				348B73002ABC9842000DFF45 /* SongSectionView.swift in Sources */,
 				3415C0EB2AC1A99B002487B4 /* SongGridView.swift in Sources */,
+				34DEA3AE2AC984FE00B7A2B6 /* MovieAboutDetailView.swift in Sources */,
 				34ECBF3E2ABEF7BF00C9A2B0 /* AlbumWithSongsViewModel.swift in Sources */,
 				344D74D12ABB625A007F7253 /* EntityType.swift in Sources */,
 				34D9FBDE2AB9FF710055427B /* SongListViewModel.swift in Sources */,
