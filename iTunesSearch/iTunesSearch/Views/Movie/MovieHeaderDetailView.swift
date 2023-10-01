@@ -30,7 +30,7 @@ struct MovieHeaderDetailView: View {
             }
             
             Spacer(minLength: 20)
-            BuyButton(urlString: movie.trackViewURL, price: movie.trackRentalPrice, currency: movie.currency)
+            BuyButton(urlString: movie.trackViewURL, price: movie.trackPrice, currency: movie.currency)
                 .offset(y: 70)
         }
         .padding()
