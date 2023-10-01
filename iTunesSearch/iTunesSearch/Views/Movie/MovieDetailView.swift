@@ -34,11 +34,19 @@ struct MovieDetailView: View {
                     .bold()
                     .padding(.bottom, 2)
                 HStack() {
-                    VStack {
+                    VStack(alignment: .trailing, spacing: 2) {
                         Text("Genre")
+                        Text("Released")
+                        Text("Run Time")
                     }
-                    VStack {
+                    VStack(alignment: .leading, spacing: 2) {
                         Text(movie.primaryGenreName)
+                        Text(formattedDate(value: movie.releaseDate))
+                        if let duration = movie.trackTimeMillis {
+                            Text(formattedDurationMovie(time: duration))
+                        } else {
+                            Text("No duration available")
+                        }
                     }
                 }
             }

@@ -28,12 +28,24 @@ func formattedDate(value: String) -> String {
 }
 
 // MARK: - Song duration from API comes in milliseconds
-func formattedDuration(time: Int) -> String {
+func formattedDurationSong(time: Int) -> String {
     let timeInSeconds = time / 1000
     let interval = TimeInterval(timeInSeconds)
     let formatter = DateComponentsFormatter()
     formatter.zeroFormattingBehavior = .pad
     formatter.allowedUnits = [.minute, .second]
+    formatter.unitsStyle = .positional
+    
+    return formatter.string(from: interval) ?? ""
+}
+
+// MARK: - Duration for movies, we need to express hours
+func formattedDurationMovie(time: Int) -> String {
+    let timeInSeconds = time / 1000
+    let interval = TimeInterval(timeInSeconds)
+    let formatter = DateComponentsFormatter()
+    formatter.zeroFormattingBehavior = .pad
+    formatter.allowedUnits = [.hour, .minute, .second]
     formatter.unitsStyle = .positional
     
     return formatter.string(from: interval) ?? ""
