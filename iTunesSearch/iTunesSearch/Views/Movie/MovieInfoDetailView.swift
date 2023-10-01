@@ -17,11 +17,12 @@ struct MovieInfoDetailView: View {
                     .font(.title3)
                     .bold()
                     .padding(.bottom, 2)
-                HStack() {
+                HStack(alignment: .top) {
                     VStack(alignment: .trailing, spacing: 2) {
                         Text("text-genre")
                         Text("text-released")
                         Text("text-runTime")
+                        Text("text-title")
                     }
                     VStack(alignment: .leading, spacing: 2) {
                         Text(movie.primaryGenreName)
@@ -31,6 +32,8 @@ struct MovieInfoDetailView: View {
                         } else {
                             Text("text-duration")
                         }
+                        Text(movie.trackName)
+                            .lineLimit(4)
                     }
                     .foregroundColor(.gray)
                 }

@@ -20,8 +20,10 @@ struct MovieSectionView: View {
                         VStack(alignment: .leading) {
                             ObjectImageView(urlString: movie.artworkUrl100, size: 100)
                             Text(movie.trackName)
+                                .multilineTextAlignment(.leading)
                             Text(movie.primaryGenreName)
                                 .foregroundColor(.gray)
+                                .multilineTextAlignment(.leading)
                         }
                         .lineLimit(2)
                         .frame(width: 80)

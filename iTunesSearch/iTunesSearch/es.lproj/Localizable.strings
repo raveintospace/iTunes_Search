@@ -42,6 +42,7 @@
 
 // MARK: - MovieInfoDetailView
 "text-information" = "Información";
+"text-title" = "Título";
 "text-genre" = "Género";
 "text-released" = "Lanzamiento";
 "text-runTime" = "Duración";

@@ -16,13 +16,14 @@ struct MovieHeaderDetailView: View {
             VStack(alignment: .leading) {
                 Text(movie.trackName)
                     .lineLimit(1)
+                    .bold()
                 
                 Text(movie.artistName)
                     .font(.footnote)
                     .foregroundColor(Color(.label))
                     .lineLimit(1)
                 
-                Text("text-rating %@: \(movie.contentAdvisoryRating)")
+                Text("text-rating \(movie.contentAdvisoryRating)")
                     .font(.footnote)
                     .foregroundColor(Color(.label))
                     .offset(y: 48)
