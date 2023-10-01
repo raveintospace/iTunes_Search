@@ -33,6 +33,20 @@
 "text-trendingMovieArtists" = "Trending movie artists";
 "navigation-title-movieSearchView" = "Search Movies";
 
+// MARK: - MovieHeaderDetailView
+"text-rating %@" = "Rating: %@";
+
+// MARK: - MovieAboutDetailView
+"text-about" = "About the film";
+"text-noLongDescription" = "No description available";
+
+// MARK: - MovieInfoDetailView
+"text-information" = "Information";
+"text-genre" = "Genre";
+"text-released" = "Released";
+"text-runTime" = "Run Time";
+"text-duration" = "No duration available";
+
 // MARK: - Picker
 "picker-all" = "All";
 "picker-album" = "Albums";

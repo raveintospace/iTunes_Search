@@ -13,14 +13,14 @@ struct MovieAboutDetailView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("About the film")
+            Text("text-about")
                 .font(.title3)
                 .bold()
                 .padding(.bottom, 2)
             if let longDescription = movie.longDescription {
                 ExpandableText(longDescription)
             } else {
-                Text("No description available")
+                Text("text-noLongDescription")
             }
         }
         .padding(.horizontal)

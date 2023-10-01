@@ -13,15 +13,15 @@ struct MovieInfoDetailView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text("Information")
+                Text("text-information")
                     .font(.title3)
                     .bold()
                     .padding(.bottom, 2)
                 HStack() {
                     VStack(alignment: .trailing, spacing: 2) {
-                        Text("Genre")
-                        Text("Released")
-                        Text("Run Time")
+                        Text("text-genre")
+                        Text("text-released")
+                        Text("text-runTime")
                     }
                     VStack(alignment: .leading, spacing: 2) {
                         Text(movie.primaryGenreName)
@@ -29,7 +29,7 @@ struct MovieInfoDetailView: View {
                         if let duration = movie.trackTimeMillis {
                             Text(formattedDurationMovie(time: duration))
                         } else {
-                            Text("No duration available")
+                            Text("text-duration")
                         }
                     }
                     .foregroundColor(.gray)

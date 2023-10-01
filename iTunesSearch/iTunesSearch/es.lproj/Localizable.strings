@@ -33,6 +33,20 @@
 "text-trendingMovieArtists" = "Artistas de cine en tendencia";
 "navigation-title-movieSearchView" = "Buscar Películas";
 
+// MARK: - MovieHeaderDetailView
+"text-rating %@" = "Calificación: %@";
+
+// MARK: - MovieAboutDetailView
+"text-about" = "Sobre la película";
+"text-noLongDescription" = "Descripción no disponible";
+
+// MARK: - MovieInfoDetailView
+"text-information" = "Información";
+"text-genre" = "Género";
+"text-released" = "Lanzamiento";
+"text-runTime" = "Duración";
+"text-duration" = "Duración no disponible";
+
 // MARK: - Picker
 "picker-all" = "Todo";
 "picker-album" = "Álbumes";

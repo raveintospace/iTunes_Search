@@ -22,7 +22,7 @@ struct MovieHeaderDetailView: View {
                     .foregroundColor(Color(.label))
                     .lineLimit(1)
                 
-                Text("Rating: \(movie.contentAdvisoryRating)")
+                Text("text-rating %@: \(movie.contentAdvisoryRating)")
                     .font(.footnote)
                     .foregroundColor(Color(.label))
                     .offset(y: 48)
