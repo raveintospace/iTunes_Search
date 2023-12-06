@@ -6,7 +6,7 @@ iTunes replica to learn API Calls &amp; Pagination, using SwiftUI &amp; MVVM
 This app features: 
 <ul>
 <li>MVVM architecture</li>
-<li>Simultaneous API calls</li>
+<li>Simultaneous API requests</li>
 <li>Combine</li>
 <li>A content view with TabViews</li>
 <li>ButtonStyle to customize buttons</li>
